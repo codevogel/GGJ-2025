@@ -1,4 +1,3 @@
-
 using UnityEditor;
 using UnityEditor.Compilation;
 using UnityEngine;
@@ -12,6 +11,7 @@ public static class ScriptCompilationHotkey
    private static void ForceRecompile()
    {
       Debug.Log("Forcing script compilation...");
+      AssetDatabase.Refresh();
       CompilationPipeline.RequestScriptCompilation();
    }
 }
