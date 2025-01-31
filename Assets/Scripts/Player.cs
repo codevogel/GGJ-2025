@@ -5,6 +5,8 @@ public class Player : MonoBehaviour
    [SerializeField]
    private Inflator inflator;
 
+   public Transform spawnPoint;
+
    public void PickUp(Pickup pickup)
    {
       Debug.Log("Picked up " + pickup + $" with type {pickup.pickupType}");
@@ -19,5 +21,14 @@ public class Player : MonoBehaviour
       }
    }
 
-   public void Pop() => inflator.Pop();
+   public void Pop()
+   {
+      inflator.Pop();
+      Respawn();
+   }
+
+   public void Respawn()
+   {
+      transform.position = spawnPoint.position;
+   }
 }

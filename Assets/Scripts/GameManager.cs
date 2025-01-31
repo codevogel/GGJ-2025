@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
    public static GameManager instance;
 
    private GameObject[] players = new GameObject[4];
-   private Dictionary<GameObject, PlayerController> controllerDictionary= new Dictionary<GameObject, PlayerController>();
+   private Dictionary<GameObject, PlayerController> controllerDictionary = new Dictionary<GameObject, PlayerController>();
    private int playerCount = 0;
 
    [SerializeField] private float timeInRound = 60;
@@ -97,6 +97,7 @@ public class GameManager : MonoBehaviour
 
          players[i].transform.position = playerSpawnPoints[i].transform.position;
          players[i].transform.rotation = playerSpawnPoints[i].transform.rotation;
+         players[i].GetComponent<Player>().spawnPoint = playerSpawnPoints[i].transform;
          //add in resetting inflation
       }
    }
@@ -122,10 +123,13 @@ public class GameManager : MonoBehaviour
 
    private IEnumerator RunRound()
    {
+
+      FindAnyObjectByType<DynamicObstacleSpawner>().StartSpawning();
+
       float time = 0;
       while (time < timeInRound)
       {
-         time+= Time.deltaTime;
+         time += Time.deltaTime;
          gameUI.UpdateTimer(Mathf.RoundToInt(timeInRound - time));
          yield return null;
       }
