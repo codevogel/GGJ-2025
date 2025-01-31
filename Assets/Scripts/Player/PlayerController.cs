@@ -61,6 +61,10 @@ public class PlayerController : MonoBehaviour
       if (isMoving)
       {
          wizardModel.transform.rotation = Quaternion.LookRotation(-new Vector3(movementInput.x, 0, movementInput.y), Vector3.up);
+      } 
+      else
+      {
+         wizardModel.transform.rotation = wizardModel.transform.rotation;
       }
       wizardAnimator.SetBool("Moving", isMoving);
 
