@@ -150,6 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floatSpeed: 1
-  floatHeight: 0.1
-  sideSpeed: 0.5
-  sideWidth: 0.2
+  yMove: 0.1
+  speed: 0.5
+  xMove: 0.2
+  zMove: 0.2

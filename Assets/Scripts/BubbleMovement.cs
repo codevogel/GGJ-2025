@@ -14,7 +14,7 @@ public class BubbleFloat : MonoBehaviour
    void Start()
    {
       startPosition = transform.position;
-      timeOffset = Random.Range(0f, 2f * Mathf.PI); // Willekeurige offset om bubbels uniek te maken
+      timeOffset = Random.Range(0f, 2f * Mathf.PI); 
    }
 
    void Update()
