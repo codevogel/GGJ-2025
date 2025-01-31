@@ -12,6 +12,8 @@ public class Inflator : MonoBehaviour
    {
       var incrementAmount = amount < 0 ? incrementalScale : amount;
       sphere.transform.localScale += Vector3.one * incrementAmount;
+      var scaleMagnitude = sphere.transform.localScale.x;
+      sphere.transform.localPosition = new Vector3(0, (scaleMagnitude - 2) / 2, 0);
    }
 
 }
