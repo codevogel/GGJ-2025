@@ -81,7 +81,9 @@ public class GameManager : MonoBehaviour
 
    private void EndGame(GameObject winner)
    {
+      currentRoutine = null;
       SceneManager.LoadScene("Victory Screen");
+      GameObject.FindAnyObjectByType<VictoryScreen>().SetWinnerText(winner.name);
    }
 
    private void InitializePlayers()
@@ -93,6 +95,7 @@ public class GameManager : MonoBehaviour
 
          players[i].transform.position = playerSpawnPoints[i].transform.position;
          players[i].transform.rotation = playerSpawnPoints[i].transform.rotation;
+         //add in resetting inflation
       }
    }
 
@@ -145,5 +148,15 @@ public class GameManager : MonoBehaviour
          }
       }
       currentRoutine = StartCoroutine(RunRound());
+   }
+
+   public void ClearPersistents()
+   {
+      foreach (var player in players)
+      {
+         if (player != null)
+            Destroy(player);
+      }
+      Destroy(gameObject);
    }
 }
