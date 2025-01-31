@@ -12,10 +12,12 @@ public class Player : MonoBehaviour
       switch (pickup.pickupType)
       {
          case IPickupable.PickupType.Bubble:
-            inflator.Inflate();
+            inflator.IncrementBubbleCount();
             break;
          default:
             throw new System.NotImplementedException();
       }
    }
+
+   public void Pop() => inflator.Pop();
 }
