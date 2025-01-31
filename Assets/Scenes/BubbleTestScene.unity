@@ -522,11 +522,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6121543550053111134, guid: 8658ae3c76141a047b8b9defa60826be, type: 3}
+      propertyPath: yMove
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 8421775834817449450, guid: 8658ae3c76141a047b8b9defa60826be, type: 3}
       propertyPath: m_Name
       value: Bubble
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4633690092917579645, guid: 8658ae3c76141a047b8b9defa60826be, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
