@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -5,6 +6,11 @@ public class DynamicObstacleSpawner : MonoBehaviour
 {
    public float radius = 10f;
    public List<DynamicObstacle> obstaclePrefabs = new();
+
+   public float secondsBeforeSpawnMin = 3;
+   public float secondsBeforeSpawnMax = 7;
+
+   private Coroutine spawnObstaclesCoroutine;
 
    public void OnDrawGizmos()
    {
@@ -21,13 +27,22 @@ public class DynamicObstacleSpawner : MonoBehaviour
       GameObject.Instantiate(obstaclePrefab, transform.position + randomUnitDisk * radius, Quaternion.identity);
    }
 
-   void Update()
+   public void StartSpawning()
    {
-      //TODO: koppelen
-      if (Input.GetKeyDown(KeyCode.Space))
-      {
-         SpawnRandomObstacle();
-      }
+      spawnObstaclesCoroutine = StartCoroutine(SpawnObstacles());
    }
 
+   public void StopSpawning()
+   {
+      StopCoroutine(spawnObstaclesCoroutine);
+   }
+
+   public IEnumerator SpawnObstacles()
+   {
+      while (true)
+      {
+         SpawnRandomObstacle();
+         yield return new WaitForSeconds(Random.Range(secondsBeforeSpawnMin, secondsBeforeSpawnMax));
+      }
+   }
 }
