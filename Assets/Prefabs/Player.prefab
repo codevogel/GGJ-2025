@@ -208,7 +208,8 @@ GameObject:
   - component: {fileID: 2633324300206216464}
   - component: {fileID: 5726049249601082918}
   - component: {fileID: 3751482281497398912}
-  m_Layer: 0
+  - component: {fileID: 2200695729292287219}
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -283,6 +284,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a7291f8bd05a0ed69ba9e76761a0eff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupSpawner: {fileID: 2200695729292287219}
+  bubblePickupPrefab: {fileID: 2373577413581710993, guid: bdb4ae2dcb79cd11a8cbc941a6d38d74, type: 3}
   sphere: {fileID: 6343811923284705630}
   incrementalScale: 0.5
 --- !u!114 &5726049249601082918
@@ -427,6 +430,21 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &2200695729292287219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6937183731054954762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a806ff1619c0b13f8a8b4963c901bae6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 2
+  pickupPrefabs:
+  - {fileID: 1849122240133150116, guid: 8658ae3c76141a047b8b9defa60826be, type: 3}
 --- !u!1 &8530130187469773462
 GameObject:
   m_ObjectHideFlags: 0
