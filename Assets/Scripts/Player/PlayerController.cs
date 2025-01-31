@@ -40,21 +40,30 @@ public class PlayerController : MonoBehaviour
     private Vector3 bufferedVelocity;
     public Vector3 BufferedVelocity { get { return bufferedVelocity; } }
 
+    [SerializeField] private GameObject wizardModel;
+    private Animator wizardAnimator;
+
     private void Awake()
     {
+        wizardAnimator = wizardModel.GetComponent<Animator>();
         DontDestroyOnLoad(gameObject);
         rigidBody = GetComponent<Rigidbody>();
     }
 
-    //private void Start()
-    //{
-    //    StartCoroutine(DoBufferVelocity());
-    //}
+   //private void Start()
+   //{
+   //    StartCoroutine(DoBufferVelocity());
+   //}
 
-    public void OnMove(InputAction.CallbackContext context)
+   private void Update()
+   {
+      wizardModel.transform.rotation = Quaternion.LookRotation(new Vector3(movementInput.x, 0, movementInput.y), Vector3.up);
+      wizardAnimator.SetBool("Moving", movementInput.magnitude > 0.1);
+   }
+
+   public void OnMove(InputAction.CallbackContext context)
     {
         movementInput = context.ReadValue<Vector2>();
-        Debug.Log(context.ReadValue<Vector2>());
     }
 
     //public void OnJump(InputAction.CallbackContext context)
