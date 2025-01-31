@@ -186,6 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inflator: {fileID: 2633324300206216464}
+  GFX: {fileID: 8530130187469773462}
 --- !u!114 &2633324300206216464
 MonoBehaviour:
   m_ObjectHideFlags: 0

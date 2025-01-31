@@ -97,7 +97,6 @@ public class GameManager : MonoBehaviour
 
          players[i].transform.position = playerSpawnPoints[i].transform.position;
          players[i].transform.rotation = playerSpawnPoints[i].transform.rotation;
-         players[i].GetComponent<Player>().spawnPoint = playerSpawnPoints[i].transform;
          //add in resetting inflation
       }
    }
