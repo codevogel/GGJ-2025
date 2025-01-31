@@ -11,7 +11,7 @@ public class TargetGroupManager : MonoBehaviour
       GameObject[] players =  GameObject.FindGameObjectsWithTag("Player");
       foreach (var player in players)
       {
-         targetGroup.AddMember(player.transform, 1, 1);
+         targetGroup.AddMember(player.transform, 1, 5);
       }
     }
 }
