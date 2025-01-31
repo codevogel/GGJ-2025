@@ -82,6 +82,7 @@ public class LocalLobbyHandler : MonoBehaviour
             _playerController.IsAlive = false;
             playerInput.GetComponent<Rigidbody>().isKinematic = true;
             _playerController.PlayerNumber = i;
+            playerInput.name = $"Player {i + 1}";
             playerInput.gameObject.transform.position = playerSlots[i].transform.position;
             playerInput.gameObject.transform.rotation = Quaternion.identity;
             //_playerController.AnimatedHamster.transform.forward = playerSlots[i].transform.forward;
