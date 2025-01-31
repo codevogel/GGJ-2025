@@ -1,11 +1,21 @@
+using System.Collections;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class MainMenu : MonoBehaviour
 {
+   [SerializeField] private AudioClip startSFX;
     public void StartGame()
    {
+      StartCoroutine(IEstartGame());
+   }
+
+   IEnumerator IEstartGame()
+   {
+      PlaySfx.instance.playOneShotSFX(startSFX, transform, 2f, 2f, 1f, 1f);
+      yield return new WaitForSeconds(startSFX.length);
       SceneManager.LoadScene("Lobby");
    }
 
