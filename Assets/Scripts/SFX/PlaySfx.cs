@@ -30,7 +30,7 @@ public class PlaySfx : MonoBehaviour
      @param maxPitch: the maximum pitch of the sound effect
      */
 
-    public void playOneShotSFX(AudioClip sfx, Transform pos, float minVolume = 0.8f, float maxVolume = 1.0f, float minPitch = 0.8f, float maxPitch = 1.2f)
+    public void playOneShotSFX(AudioClip sfx, Transform pos, float minVolume = 0.8f, float maxVolume = 1.0f, float minPitch = 0.8f, float maxPitch = 1.2f, float spatialBlend = 1f)
     {
         if (sfx == null)
         {
@@ -46,6 +46,7 @@ public class PlaySfx : MonoBehaviour
 
         float volume = Random.Range(minVolume, maxVolume);
         float pitch = Random.Range(minPitch, maxPitch);
+        audioSource.spatialBlend = spatialBlend;
 
         audioSource.pitch = pitch;
 

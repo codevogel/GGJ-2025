@@ -14,7 +14,7 @@ public class MainMenu : MonoBehaviour
 
    IEnumerator IEstartGame()
    {
-      PlaySfx.instance.playOneShotSFX(startSFX, transform, 2f, 2f, 1f, 1f);
+      PlaySfx.instance.playOneShotSFX(startSFX, transform, 1f, 1f, 1f, 1f, 0f);
       yield return new WaitForSeconds(startSFX.length);
       SceneManager.LoadScene("Lobby");
    }
