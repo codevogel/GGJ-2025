@@ -876,7 +876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9146bf8efafadb4ca4e6892857b2eac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeInRound: 60
+  timeInRound: 800
   countdownTime: 3
   playerSpawnPoints:
   - {fileID: 0}
