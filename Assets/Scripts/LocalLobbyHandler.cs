@@ -17,11 +17,9 @@ public class LocalLobbyHandler : MonoBehaviour
     [SerializeField] private Material player3Material;
     [SerializeField] private Material player4Material;
 
-    //[Space]
-    //[SerializeField] private Material ballMaterialRed;
-    //[SerializeField] private Material ballMaterialGreen;
-    //[SerializeField] private Material ballMaterialBlue;
-    //[SerializeField] private Material ballMaterialYellow;
+   [Space]
+   [SerializeField] private Material[] wizardMats;
+   [SerializeField] private Material baseWizardMat;
 
     //private float greenSaturationPercent = 70f;
     //private float blueSaturationPercent = 60f;
@@ -39,34 +37,10 @@ public class LocalLobbyHandler : MonoBehaviour
         }
     }
 
-   //private void SetBallColorAndHamsterMaterial(GameObject player, int playerSlotIndex)
-   //{
-   //   AnimatedHamster _animatedHamster = player.GetComponentInChildren<AnimatedHamster>();
-
-   //   player.GetComponent<MeshRenderer>().material = ballMaterialRed;
-
-   //   if (playerSlotIndex == 1)
-   //   {
-   //      //player.GetComponent<MeshRenderer>().material.SetColor("_Color", Color.green);
-   //      player.GetComponent<MeshRenderer>().material = ballMaterialGreen;
-   //      _animatedHamster.SetMaterial(player2Material);
-   //      //player.GetComponent<MeshRenderer>().material.SetFloat("_SaturationPercent", greenSaturationPercent);
-   //   }
-   //   else if (playerSlotIndex == 2)
-   //   {
-   //      player.GetComponent<MeshRenderer>().material.SetColor("_Color", Color.blue);
-   //      player.GetComponent<MeshRenderer>().material = ballMaterialBlue;
-   //      _animatedHamster.SetMaterial(player3Material);
-   //      //player.GetComponent<MeshRenderer>().material.SetFloat("_SaturationPercent", blueSaturationPercent);
-   //   }
-   //   else if (playerSlotIndex == 3)
-   //   {
-   //      player.GetComponent<MeshRenderer>().material.SetColor("_Color", Color.yellow);
-   //      player.GetComponent<MeshRenderer>().material = ballMaterialYellow;
-   //      _animatedHamster.SetMaterial(player4Material);
-   //      //player.GetComponent<MeshRenderer>().material.SetFloat("_SaturationPercent", yellowSaturationPercent);
-   //   }
-   //}
+   private void SetWizardColor(GameObject player, int playerSlotIndex)
+   {
+      player.GetComponent<PlayerColorer>().ColorWizard(wizardMats[playerSlotIndex]);
+   }
 
    public void AddPlayer(PlayerInput playerInput)
    {
@@ -76,6 +50,7 @@ public class LocalLobbyHandler : MonoBehaviour
       {
          if (!playerSlots[i].activeInHierarchy)
          {
+            Debug.Log("setting player");
             playerSlots[i].SetActive(true);
             //pass through to lobby controller
             PlayerController _playerController = playerInput.GetComponent<PlayerController>();
@@ -88,7 +63,7 @@ public class LocalLobbyHandler : MonoBehaviour
             //_playerController.AnimatedHamster.transform.forward = playerSlots[i].transform.forward;
             //playerInput.GetComponent<LocalLobbyTag>().ReadyText = readyTexts[i];
             playerCount++;
-            //SetBallColorAndHamsterMaterial(playerInput.gameObject, i);
+            SetWizardColor(_playerController.wizardModel, i);
             return;
          }
       }

@@ -40,12 +40,13 @@ public class PlayerController : MonoBehaviour
     private Vector3 bufferedVelocity;
     public Vector3 BufferedVelocity { get { return bufferedVelocity; } }
 
-    [SerializeField] private GameObject wizardModel;
+    [SerializeField] public GameObject wizardModel;
     private Animator wizardAnimator;
    private Vector3 lastForward;
 
     private void Awake()
     {
+      lastForward= transform.forward;
         wizardAnimator = wizardModel.GetComponent<Animator>();
         DontDestroyOnLoad(gameObject);
         rigidBody = GetComponent<Rigidbody>();

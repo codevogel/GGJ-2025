@@ -1075,6 +1075,12 @@ MonoBehaviour:
   player2Material: {fileID: 0}
   player3Material: {fileID: 0}
   player4Material: {fileID: 0}
+  wizardMats:
+  - {fileID: 2100000, guid: 4b8dff78a65123a49b1256468019a649, type: 2}
+  - {fileID: 2100000, guid: c7ddc1b3e1bdd1f44bad5a29525e4ef3, type: 2}
+  - {fileID: 2100000, guid: 960e31a5f8741234a9400d9301665770, type: 2}
+  - {fileID: 2100000, guid: a49f0417e1bb4a448901e199af3d4ad8, type: 2}
+  baseWizardMat: {fileID: 2100000, guid: 02e6a877faef9824daad4fe92e0609b8, type: 2}
 --- !u!4 &1897137116
 Transform:
   m_ObjectHideFlags: 0
