@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
    [SerializeField] private GameObject[] playerSpawnPoints = new GameObject[4];
 
    private Coroutine currentRoutine;
+   private GameUI gameUI;
 
    private void Start()
    {
@@ -69,6 +70,7 @@ public class GameManager : MonoBehaviour
 
    public void StartGame()
    {
+      gameUI = FindAnyObjectByType<GameUI>();
       playerSpawnPoints = GameObject.FindGameObjectsWithTag("PlayerSpawns");
       InitializePlayers();
       InitializeArena();
@@ -124,6 +126,7 @@ public class GameManager : MonoBehaviour
       while (time < timeInRound)
       {
          time+= Time.deltaTime;
+         gameUI.UpdateTimer(Mathf.RoundToInt(timeInRound - time));
          yield return null;
       }
 
@@ -136,9 +139,11 @@ public class GameManager : MonoBehaviour
       while (time < countdownTime)
       {
          time += Time.deltaTime;
+         gameUI.UpdateCountdown(Mathf.RoundToInt(countdownTime - time));
          yield return null;
       }
 
+      gameUI.DisableCountdown();
       foreach (var player in players)
       {
          if (player != null)
