@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -80,7 +81,7 @@ public class GameManager : MonoBehaviour
 
    private void EndGame(GameObject winner)
    {
-
+      SceneManager.LoadScene("Victory Screen");
    }
 
    private void InitializePlayers()
@@ -102,7 +103,16 @@ public class GameManager : MonoBehaviour
 
    private GameObject DetermineWinner()
    {
-      return null;
+      GameObject winner = players[0];
+      for (int i = 1; i < players.Length; i++)
+      {
+         if (players[i] != null && players[i].transform.localScale.magnitude > winner.transform.localScale.magnitude)
+         {
+            winner = players[i];
+         }
+      }
+
+      return winner;
    }
 
    private IEnumerator RunRound()
