@@ -879,17 +879,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2633324300206216464, guid: a9c0bebd1e2cc3636937a5ec3645d3a4, type: 3}
-      propertyPath: incrementalScale
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4946298323698388845, guid: a9c0bebd1e2cc3636937a5ec3645d3a4, type: 3}
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4946298323698388845, guid: a9c0bebd1e2cc3636937a5ec3645d3a4, type: 3}
       propertyPath: m_Constraints
-      value: 112
+      value: 116
       objectReference: {fileID: 0}
     - target: {fileID: 5520072448662907332, guid: a9c0bebd1e2cc3636937a5ec3645d3a4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -897,7 +893,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5520072448662907332, guid: a9c0bebd1e2cc3636937a5ec3645d3a4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.46
       objectReference: {fileID: 0}
     - target: {fileID: 5520072448662907332, guid: a9c0bebd1e2cc3636937a5ec3645d3a4, type: 3}
       propertyPath: m_LocalPosition.z

@@ -40,21 +40,45 @@ public class PlayerController : MonoBehaviour
     private Vector3 bufferedVelocity;
     public Vector3 BufferedVelocity { get { return bufferedVelocity; } }
 
+    [SerializeField] private GameObject wizardModel;
+    private Animator wizardAnimator;
+
     private void Awake()
     {
+        wizardAnimator = wizardModel.GetComponent<Animator>();
         DontDestroyOnLoad(gameObject);
         rigidBody = GetComponent<Rigidbody>();
     }
 
-    //private void Start()
-    //{
-    //    StartCoroutine(DoBufferVelocity());
-    //}
+   //private void Start()
+   //{
+   //    StartCoroutine(DoBufferVelocity());
+   //}
 
-    public void OnMove(InputAction.CallbackContext context)
+   private void Update()
+   {
+      bool isMoving = movementInput.magnitude > 0.1;
+      if (isMoving)
+      {
+         wizardModel.transform.rotation = Quaternion.LookRotation(-new Vector3(movementInput.x, 0, movementInput.y), Vector3.up);
+      }
+      wizardAnimator.SetBool("Moving", isMoving);
+
+      //align wizard with ground
+      RaycastHit hit;
+      if (Physics.Raycast(transform.position, Vector3.down,out hit, floorRayLength, groundLayer))
+      {
+         wizardModel.transform.position = hit.point;
+      }
+      else
+      {
+         wizardModel.transform.position = transform.position - (Vector3.up * 1);
+      }
+   }
+
+   public void OnMove(InputAction.CallbackContext context)
     {
         movementInput = context.ReadValue<Vector2>();
-        Debug.Log(context.ReadValue<Vector2>());
     }
 
     //public void OnJump(InputAction.CallbackContext context)
