@@ -11,7 +11,8 @@ public class Pickup : MonoBehaviour, IPickupable
 
    public void OnTriggerEnter(Collider other)
    {
-      if (other.gameObject.TryGetComponent<Player>(out var player))
+      var player = other.gameObject.GetComponentInParent<Player>();
+      if (player != null)
       {
          PickUp(player);
          Destroy(this.gameObject);
