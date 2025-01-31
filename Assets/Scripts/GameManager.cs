@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -80,7 +81,9 @@ public class GameManager : MonoBehaviour
 
    private void EndGame(GameObject winner)
    {
-
+      currentRoutine = null;
+      SceneManager.LoadScene("Victory Screen");
+      GameObject.FindAnyObjectByType<VictoryScreen>().SetWinnerText(winner.name);
    }
 
    private void InitializePlayers()
@@ -92,6 +95,7 @@ public class GameManager : MonoBehaviour
 
          players[i].transform.position = playerSpawnPoints[i].transform.position;
          players[i].transform.rotation = playerSpawnPoints[i].transform.rotation;
+         //add in resetting inflation
       }
    }
 
@@ -102,7 +106,16 @@ public class GameManager : MonoBehaviour
 
    private GameObject DetermineWinner()
    {
-      return null;
+      GameObject winner = players[0];
+      for (int i = 1; i < players.Length; i++)
+      {
+         if (players[i] != null && players[i].transform.localScale.magnitude > winner.transform.localScale.magnitude)
+         {
+            winner = players[i];
+         }
+      }
+
+      return winner;
    }
 
    private IEnumerator RunRound()
@@ -135,5 +148,15 @@ public class GameManager : MonoBehaviour
          }
       }
       currentRoutine = StartCoroutine(RunRound());
+   }
+
+   public void ClearPersistents()
+   {
+      foreach (var player in players)
+      {
+         if (player != null)
+            Destroy(player);
+      }
+      Destroy(gameObject);
    }
 }
