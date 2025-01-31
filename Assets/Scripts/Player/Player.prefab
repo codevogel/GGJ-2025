@@ -294,8 +294,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a7291f8bd05a0ed69ba9e76761a0eff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupSpawner: {fileID: 0}
+  bubblePickupPrefab: {fileID: 0}
   sphere: {fileID: 0}
-  incrementalScale: 0.1
+  incrementalScale: 0.01
 --- !u!114 &3732135496384460776
 MonoBehaviour:
   m_ObjectHideFlags: 0
