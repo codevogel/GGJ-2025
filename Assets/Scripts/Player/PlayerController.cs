@@ -40,21 +40,48 @@ public class PlayerController : MonoBehaviour
     private Vector3 bufferedVelocity;
     public Vector3 BufferedVelocity { get { return bufferedVelocity; } }
 
+    [SerializeField] public GameObject wizardModel;
+    private Animator wizardAnimator;
+   private Vector3 lastForward;
+
     private void Awake()
     {
+      lastForward= transform.forward;
+        wizardAnimator = wizardModel.GetComponent<Animator>();
         DontDestroyOnLoad(gameObject);
         rigidBody = GetComponent<Rigidbody>();
     }
 
-    //private void Start()
-    //{
-    //    StartCoroutine(DoBufferVelocity());
-    //}
+   //private void Start()
+   //{
+   //    StartCoroutine(DoBufferVelocity());
+   //}
 
-    public void OnMove(InputAction.CallbackContext context)
+   private void Update()
+   {
+      bool isMoving = movementInput.magnitude > 0.1;
+      if (isMoving)
+      {
+         lastForward = -new Vector3(movementInput.x, 0, movementInput.y);
+      } 
+      wizardModel.transform.rotation = Quaternion.LookRotation(lastForward, Vector3.up);
+      wizardAnimator.SetBool("Moving", isMoving);
+
+      //align wizard with ground
+      RaycastHit hit;
+      if (Physics.Raycast(transform.position, Vector3.down,out hit, floorRayLength, groundLayer))
+      {
+         wizardModel.transform.position = hit.point;
+      }
+      else
+      {
+         wizardModel.transform.position = transform.position - (Vector3.up * 1);
+      }
+   }
+
+   public void OnMove(InputAction.CallbackContext context)
     {
         movementInput = context.ReadValue<Vector2>();
-        Debug.Log(context.ReadValue<Vector2>());
     }
 
     //public void OnJump(InputAction.CallbackContext context)
