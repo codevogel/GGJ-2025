@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class BubbleSpawnManager : MonoBehaviour
 {
    [SerializeField]
-   List<GameObject> bubbleSpawnLocations;
+   List<GameObject> currentCauldrons;
 
    [SerializeField]
    float waitTillNextExplosion = 10;
@@ -34,8 +34,8 @@ public class BubbleSpawnManager : MonoBehaviour
    {
       while (GameRunning)
       {
-         GameObject nextToExplode = bubbleSpawnLocations[Random.Range(0, bubbleSpawnLocations.Count)];
-         BubbleSpawner bubbleSpawner = nextToExplode.GetComponent<BubbleSpawner>();
+         GameObject nextToExplode = currentCauldrons[Random.Range(0, currentCauldrons.Count)];
+         Cauldron bubbleSpawner = nextToExplode.GetComponent<Cauldron>();
 
          yield return new WaitForSeconds(waitTillNextExplosion);
 
@@ -48,7 +48,7 @@ public class BubbleSpawnManager : MonoBehaviour
       }
    }
 
-   private void Explode(BubbleSpawner bubbleSpawner)
+   private void Explode(Cauldron bubbleSpawner)
    {
       bubbleSpawner.ExplodeEvent.Invoke();
    }

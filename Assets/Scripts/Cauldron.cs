@@ -1,12 +1,22 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class BubbleSpawner : MonoBehaviour
+public class Cauldron : MonoBehaviour
 {
    public GameObject bubblePrefab; 
    public int numBubbles = 10; 
    public float spawnRadius = 5f; 
    public float HeightOffset = 2f;
+
+   [SerializeField]
+   public int minExplodeTime;
+
+   [SerializeField]
+   public int maxExplodeTime;
+
+   [SerializeField]
+   public int waitFeedForward;
 
    [SerializeField]
    bool testSpawn;
@@ -18,6 +28,9 @@ public class BubbleSpawner : MonoBehaviour
    private void Start()
    {
       ExplodeEvent.AddListener(SpawnBubbles);
+      ExplodeEvent.AddListener(ExplodeCauldron);
+
+      StartCoroutine(ExplodeTimer());
    }
 
    void SpawnBubbles()
@@ -36,5 +49,19 @@ public class BubbleSpawner : MonoBehaviour
       }
    }
 
+   IEnumerator ExplodeTimer()
+   {
+      int nextToExplode = Random.Range(minExplodeTime, maxExplodeTime);
 
+      yield return new WaitForSeconds(nextToExplode);
+      ExplodeFeedForward.Invoke();
+
+      yield return new WaitForSeconds(waitFeedForward);
+      ExplodeEvent.Invoke();
+   }
+
+   private void ExplodeCauldron()
+   {
+      Destroy(this.gameObject);
+   }
 }
