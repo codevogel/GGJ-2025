@@ -13,9 +13,9 @@ public class Pickup : MonoBehaviour, IPickupable
       picker.PickUp(this);
    }
 
-   public void OnCollisionEnter(Collision collision)
+   public void OnTriggerEnter(Collider other)
    {
-      var player = collision.gameObject.GetComponentInParent<Player>();
+      var player = other.gameObject.GetComponentInParent<Player>();
       if (player != null)
       {
          PickUp(player);

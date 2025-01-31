@@ -6,51 +6,53 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
-    public Rigidbody RigidBody => rigidBody;
-    private Rigidbody rigidBody;
+   public Rigidbody RigidBody => rigidBody;
+   private Rigidbody rigidBody;
 
-    private Vector2 movementInput = new Vector2();
-    public Vector2 MovementInput { get { return movementInput; } private set { } }
-    
-    [SerializeField] private float moveForce;
-    public float MoveForce { get { return moveForce; } }
+   private Vector2 movementInput = new Vector2();
+   public Vector2 MovementInput { get { return movementInput; } private set { } }
 
-    [Space]
-    [SerializeField] private float jumpForce;
-    [SerializeField] private float floorRayLength;
-    [SerializeField] private LayerMask groundLayer;
-    private bool isJumping = false;
+   [SerializeField] private float moveForce;
+   public float MoveForce { get { return moveForce; } }
 
-    [Space]
-    [SerializeField] private float dashForce;
-    public float DashForce { get { return dashForce; } }
+   [Space]
+   [SerializeField] private float jumpForce;
+   [SerializeField] private float floorRayLength;
+   [SerializeField] private LayerMask groundLayer;
+   private bool isJumping = false;
 
-    [SerializeField] private float dashCooldown;
-    [SerializeField] private UnityEvent onDash;
-    private bool isDashing;
-    private Coroutine dashCooldownCoroutine;
+   [Space]
+   [SerializeField] private float dashForce;
+   public float DashForce { get { return dashForce; } }
 
-    public float DashCooldown { get { return dashCooldown; } }
+   [SerializeField] private float dashCooldown;
+   [SerializeField] private UnityEvent onDash;
+   private bool isDashing;
+   private Coroutine dashCooldownCoroutine;
 
-    [SerializeField] private bool isAlive = true;
-    public bool IsAlive { get { return isAlive;} set { isAlive = value; } }
+   public float DashCooldown { get { return dashCooldown; } }
 
-    public int PlayerNumber { get; set; }
+   [SerializeField] private bool isAlive = true;
+   public bool IsAlive { get { return isAlive; } set { isAlive = value; } }
 
-    private Vector3 bufferedVelocity;
-    public Vector3 BufferedVelocity { get { return bufferedVelocity; } }
+   public int PlayerNumber { get; set; }
 
-    [SerializeField] public GameObject wizardModel;
-    private Animator wizardAnimator;
+   private Vector3 bufferedVelocity;
+   public Vector3 BufferedVelocity { get { return bufferedVelocity; } }
+
+   [SerializeField] public GameObject wizardModel;
+   private Animator wizardAnimator;
    private Vector3 lastForward;
 
-    private void Awake()
-    {
-      lastForward= transform.forward;
-        wizardAnimator = wizardModel.GetComponent<Animator>();
-        DontDestroyOnLoad(gameObject);
-        rigidBody = GetComponent<Rigidbody>();
-    }
+   public float movementSpeedBoostWhenMovingOpposite = 4f;
+
+   private void Awake()
+   {
+      lastForward = transform.forward;
+      wizardAnimator = wizardModel.GetComponent<Animator>();
+      DontDestroyOnLoad(gameObject);
+      rigidBody = GetComponent<Rigidbody>();
+   }
 
    //private void Start()
    //{
@@ -63,13 +65,13 @@ public class PlayerController : MonoBehaviour
       if (isMoving)
       {
          lastForward = -new Vector3(movementInput.x, 0, movementInput.y);
-      } 
+      }
       wizardModel.transform.rotation = Quaternion.LookRotation(lastForward, Vector3.up);
       wizardAnimator.SetBool("Moving", isMoving);
 
       //align wizard with ground
       RaycastHit hit;
-      if (Physics.Raycast(transform.position, Vector3.down,out hit, floorRayLength, groundLayer))
+      if (Physics.Raycast(transform.position, Vector3.down, out hit, floorRayLength, groundLayer))
       {
          wizardModel.transform.position = hit.point;
       }
@@ -80,32 +82,39 @@ public class PlayerController : MonoBehaviour
    }
 
    public void OnMove(InputAction.CallbackContext context)
-    {
-        movementInput = context.ReadValue<Vector2>();
-    }
+   {
+      movementInput = context.ReadValue<Vector2>();
+   }
 
-    //public void OnJump(InputAction.CallbackContext context)
-    //{
-    //    isJumping = context.action.triggered;
-    //}
+   //public void OnJump(InputAction.CallbackContext context)
+   //{
+   //    isJumping = context.action.triggered;
+   //}
 
-    //public void OnDash(InputAction.CallbackContext context)
-    //{
-    //    isDashing = context.action.triggered;
-    //}
+   //public void OnDash(InputAction.CallbackContext context)
+   //{
+   //    isDashing = context.action.triggered;
+   //}
 
-    private void FixedUpdate()
-    {
-        if (!isAlive)
-        {
-            // Attempt at fixing the jump bug that can occur at the start of the game
-            isJumping = false;
-            isDashing = false;
-            return;
-        }
+   private void FixedUpdate()
+   {
+      if (!isAlive)
+      {
+         // Attempt at fixing the jump bug that can occur at the start of the game
+         isJumping = false;
+         isDashing = false;
+         return;
+      }
 
       // move
       Vector3 moveForceVector = new Vector3(movementInput.x, 0, movementInput.y) * moveForce;
+
+      var dot = Vector3.Dot(rigidBody.linearVelocity.normalized, moveForceVector.normalized);
+      Debug.Log(dot);
+      if (dot < 0.5f)
+      {
+         moveForceVector *= movementSpeedBoostWhenMovingOpposite; // Boost factor (adjust as needed)
+      }
       rigidBody.AddForce(moveForceVector);
 
       //// dash
@@ -130,26 +139,26 @@ public class PlayerController : MonoBehaviour
       //}
    }
 
-    //private void OnDrawGizmosSelected()
-    //{
-    //    Gizmos.DrawLine(transform.position, transform.position + Vector3.down * floorRayLength);
-    //}
+   //private void OnDrawGizmosSelected()
+   //{
+   //    Gizmos.DrawLine(transform.position, transform.position + Vector3.down * floorRayLength);
+   //}
 
-    //private IEnumerator DoDashCooldown()
-    //{
-    //    yield return new WaitForSeconds(dashCooldown);
-    //    dashCooldownCoroutine = null;
-    //}
+   //private IEnumerator DoDashCooldown()
+   //{
+   //    yield return new WaitForSeconds(dashCooldown);
+   //    dashCooldownCoroutine = null;
+   //}
 
-    //private IEnumerator DoBufferVelocity()
-    //{
-    //    Vector3 _currentVelocity = rigidBody.linearVelocity;
+   //private IEnumerator DoBufferVelocity()
+   //{
+   //    Vector3 _currentVelocity = rigidBody.linearVelocity;
 
-    //    while (true)
-    //    {
-    //        yield return new WaitForFixedUpdate();
-    //        bufferedVelocity = _currentVelocity;
-    //        _currentVelocity = rigidBody.linearVelocity;
-    //    }
-    //}
+   //    while (true)
+   //    {
+   //        yield return new WaitForFixedUpdate();
+   //        bufferedVelocity = _currentVelocity;
+   //        _currentVelocity = rigidBody.linearVelocity;
+   //    }
+   //}
 }

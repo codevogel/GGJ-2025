@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4484915726155376319}
   - component: {fileID: 7402653823994538649}
   - component: {fileID: 4933229833453859914}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player Bubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,9 +154,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6937183731054954762}
   serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 0.5
+  m_Drag: 0.25
+  m_AngularDrag: 0.25
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -171,7 +171,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!114 &507248294547933847
 MonoBehaviour:
@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39b3be70a041afc4997e16bc8f31d582, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveForce: 20
+  moveForce: 4.11
   jumpForce: 0
   floorRayLength: 5
   groundLayer:
@@ -231,6 +231,7 @@ MonoBehaviour:
       m_Calls: []
   isAlive: 1
   wizardModel: {fileID: 897459077849651101}
+  movementSpeedBoostWhenMovingOpposite: 4
 --- !u!114 &3751482281497398912
 MonoBehaviour:
   m_ObjectHideFlags: 0
