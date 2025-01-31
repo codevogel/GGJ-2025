@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -9,21 +11,14 @@ public class LocalLobbyHandler : MonoBehaviour
     private int playerCount;
     [SerializeField] private GameObject[] playerSlots = new GameObject[4];
     [SerializeField] private GameObject[] readyTexts = new GameObject[4];
+   private Dictionary<GameObject, GameObject> playerReadyTextDictionary = new Dictionary<GameObject, GameObject>();
+
     [SerializeField] private GameObject startButton;
     [SerializeField] private GameObject startButton3D;
-
-    [Space]
-    [SerializeField] private Material player2Material;
-    [SerializeField] private Material player3Material;
-    [SerializeField] private Material player4Material;
 
    [Space]
    [SerializeField] private Material[] wizardMats;
    [SerializeField] private Material baseWizardMat;
-
-    //private float greenSaturationPercent = 70f;
-    //private float blueSaturationPercent = 60f;
-    //private float yellowSaturationPercent = 90f;
 
     public static LocalLobbyHandler instance;
 
@@ -60,7 +55,9 @@ public class LocalLobbyHandler : MonoBehaviour
             playerInput.name = $"Player {i + 1}";
             playerInput.gameObject.transform.position = playerSlots[i].transform.position;
             playerInput.gameObject.transform.rotation = Quaternion.identity;
-            //_playerController.AnimatedHamster.transform.forward = playerSlots[i].transform.forward;
+
+            playerReadyTextDictionary.Add(playerInput.gameObject, readyTexts[i]);
+
             //playerInput.GetComponent<LocalLobbyTag>().ReadyText = readyTexts[i];
             playerCount++;
             SetWizardColor(_playerController.wizardModel, i);
@@ -69,9 +66,9 @@ public class LocalLobbyHandler : MonoBehaviour
       }
    }
 
-   public void RemovePlayer(GameObject playerObject)
+   public void RemovePlayer(PlayerInput playerInput)
     {
-        GameManager.instance.LeaveGame(playerObject);
+        GameManager.instance.LeaveGame(playerInput.gameObject);
         playerCount--;
     }
 
@@ -96,6 +93,12 @@ public class LocalLobbyHandler : MonoBehaviour
         startButton.SetActive(true);
         startButton3D.SetActive(true);
     }
+
+   public void ToggleReadyUp(GameObject playerObject)
+   {
+      playerReadyTextDictionary[playerObject].SetActive(!playerReadyTextDictionary[playerObject].activeInHierarchy);
+      SetStartButton();
+   }
 
    public void StartGame()
    {
