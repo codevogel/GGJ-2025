@@ -50,7 +50,13 @@ public class PlaySfx : MonoBehaviour
 
         audioSource.pitch = pitch;
 
-        AudioSource.PlayClipAtPoint(sfx, pos.position, volume);
+        if(spatialBlend == 0f){
+            audioSource.volume = volume;
+            audioSource.PlayOneShot(sfx);
+            return;
+        } else {
+            AudioSource.PlayClipAtPoint(sfx, pos.position, volume);
+        }
     }
 
 }
