@@ -18,4 +18,6 @@ public class Player : MonoBehaviour
             throw new System.NotImplementedException();
       }
    }
+
+   public void Pop() => inflator.Pop();
 }

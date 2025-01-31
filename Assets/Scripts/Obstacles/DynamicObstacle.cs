@@ -19,6 +19,12 @@ public class DynamicObstacle : MonoBehaviour
       {
          Destroy(this.gameObject);
       }
+      if (collision.gameObject.CompareTag("Player"))
+      {
+         var player = collision.gameObject.GetComponent<Player>();
+         player.Pop();
+         Destroy(this.gameObject);
+      }
    }
 
 }

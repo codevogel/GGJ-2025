@@ -33,14 +33,6 @@ public class Inflator : MonoBehaviour
       PickupCount++;
    }
 
-   void Update()
-   {
-      if (Input.GetKeyDown(KeyCode.Space))
-      {
-         Pop();
-      }
-   }
-
    public void Pop()
    {
       List<Pickup> spawnedPickups = new List<Pickup>();
