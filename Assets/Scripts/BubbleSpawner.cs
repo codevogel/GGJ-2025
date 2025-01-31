@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BubbleSpawner : MonoBehaviour
 {
@@ -9,15 +10,17 @@ public class BubbleSpawner : MonoBehaviour
 
    [SerializeField]
    bool testSpawn;
+
+   public UnityEvent ExplodeFeedForward;
+
+   public UnityEvent ExplodeEvent;
+
    private void Start()
    {
-      if(testSpawn)
-      {
-         SpawnBubbles(numBubbles);
-      }   
+      ExplodeEvent.AddListener(SpawnBubbles);
    }
 
-   void SpawnBubbles(int numBubbles)
+   void SpawnBubbles()
    {
       for (int i = 0; i < numBubbles; i++)
       {
@@ -32,4 +35,6 @@ public class BubbleSpawner : MonoBehaviour
          GameObject newBubble = Instantiate(bubblePrefab, spawnPosition, Quaternion.identity);
       }
    }
+
+
 }
