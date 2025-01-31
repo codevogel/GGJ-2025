@@ -123,7 +123,7 @@ public class LocalLobbyHandler : MonoBehaviour
 
    public void StartGame()
    {
-      SceneManager.LoadScene("Main Scene");
+      SceneManager.LoadScene("Main");
    }
 
    public void ReturnToMainMenu()
