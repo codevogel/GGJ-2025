@@ -57,8 +57,17 @@ public class PlayerController : MonoBehaviour
 
    private void Update()
    {
-      wizardModel.transform.rotation = Quaternion.LookRotation(new Vector3(movementInput.x, 0, movementInput.y), Vector3.up);
+      wizardModel.transform.rotation = Quaternion.LookRotation(-new Vector3(movementInput.x, 0, movementInput.y), Vector3.up);
       wizardAnimator.SetBool("Moving", movementInput.magnitude > 0.1);
+      RaycastHit hit;
+      if (Physics.Raycast(transform.position, Vector3.down,out hit, floorRayLength, groundLayer))
+      {
+         wizardModel.transform.position = hit.point;
+      }
+      else
+      {
+         wizardModel.transform.position = transform.position - (Vector3.up * 1);
+      }
    }
 
    public void OnMove(InputAction.CallbackContext context)

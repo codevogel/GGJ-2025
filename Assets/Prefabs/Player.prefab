@@ -171,7 +171,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 4
   m_CollisionDetection: 0
 --- !u!114 &507248294547933847
 MonoBehaviour:
@@ -229,6 +229,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isAlive: 1
+  wizardModel: {fileID: 897459077849651101}
 --- !u!114 &3751482281497398912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,7 +388,7 @@ Transform:
   m_GameObject: {fileID: 8530130187469773462}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -471,5 +472,10 @@ PrefabInstance:
 --- !u!4 &522341596606090535 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 398373712348557258, guid: a395ff213661f5141885d9f7effd55be, type: 3}
+  m_PrefabInstance: {fileID: 196175062087131885}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &897459077849651101 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1066401395366950256, guid: a395ff213661f5141885d9f7effd55be, type: 3}
   m_PrefabInstance: {fileID: 196175062087131885}
   m_PrefabAsset: {fileID: 0}
