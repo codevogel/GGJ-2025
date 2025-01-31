@@ -18,6 +18,13 @@ public class Inflator : MonoBehaviour
 
    private int _pickupCount = 0;
 
+   [SerializeField]
+   private float popForce = 10;
+   [SerializeField]
+   private float popForceVerticalMin = 5;
+   [SerializeField]
+   private float popForceVerticalMax = 15;
+
    public int PickupCount
    {
       get => _pickupCount;
@@ -42,9 +49,20 @@ public class Inflator : MonoBehaviour
       }
       foreach (var pickup in spawnedPickups)
       {
-         pickup.GetComponent<Rigidbody>().AddExplosionForce(200, sphere.transform.position - sphere.transform.localScale / 2, 10);
+         var randomPoint = Random.insideUnitSphere;
+         randomPoint.y = 0;
+         pickup.GetComponent<Rigidbody>().AddExplosionForce(popForce, pickup.transform.position + randomPoint, 10);
+         pickup.GetComponent<Rigidbody>().AddForce(Vector3.up * Random.Range(popForceVerticalMin, popForceVerticalMax), ForceMode.Impulse);
       }
       PickupCount = 0;
+   }
+
+   void Update()
+   {
+      if (Input.GetKeyDown(KeyCode.Space))
+      {
+         Pop();
+      }
    }
 
    private void AdjustInflation()
