@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private GameObject wizardModel;
     private Animator wizardAnimator;
+   private Vector3 lastForward;
 
     private void Awake()
     {
@@ -60,8 +61,9 @@ public class PlayerController : MonoBehaviour
       bool isMoving = movementInput.magnitude > 0.1;
       if (isMoving)
       {
-         wizardModel.transform.rotation = Quaternion.LookRotation(-new Vector3(movementInput.x, 0, movementInput.y), Vector3.up);
-      }
+         lastForward = -new Vector3(movementInput.x, 0, movementInput.y);
+      } 
+      wizardModel.transform.rotation = Quaternion.LookRotation(lastForward, Vector3.up);
       wizardAnimator.SetBool("Moving", isMoving);
 
       //align wizard with ground
