@@ -21,6 +21,9 @@ public class Cauldron : MonoBehaviour
    [SerializeField]
    bool testSpawn;
 
+   [SerializeField]
+   GameObject explosion;
+
    public UnityEvent ExplodeFeedForward;
 
    public UnityEvent ExplodeEvent;
@@ -29,6 +32,7 @@ public class Cauldron : MonoBehaviour
    {
       ExplodeEvent.AddListener(SpawnBubbles);
       ExplodeEvent.AddListener(ExplodeCauldron);
+      ExplodeEvent.AddListener(InstantiateExplosion);
 
       StartCoroutine(ExplodeTimer());
    }
@@ -64,4 +68,10 @@ public class Cauldron : MonoBehaviour
    {
       Destroy(this.gameObject);
    }
+
+   public void InstantiateExplosion()
+   {
+      Instantiate(explosion, this.transform.position, Quaternion.identity);
+   }
+
 }
