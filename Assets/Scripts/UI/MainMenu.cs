@@ -29,13 +29,12 @@ public class MainMenu : MonoBehaviour
       Application.Quit();
    }
 
-   public void ShowControls()
+   public void ShowCredits()
    {
-
-   }
-
-   public void HideControls()
-   {
-
+      if (isChangingMenus)
+         return;
+      isChangingMenus = true;
+      PlaySfx.instance?.playOneShotSFX(startSFX, transform, 1f, 1f, 1f, 1f, 0f);
+      ScreenFaderManager.instance?.GoToSceneAsync(4);
    }
 }
