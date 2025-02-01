@@ -1,8 +1,6 @@
 using System.Collections;
 using TMPro;
-using UnityEditor.ShaderKeywordFilter;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class VictoryScreen : MonoBehaviour
 {

@@ -18,11 +18,14 @@ public class CauldronSpawner : MonoBehaviour
       StartCoroutine(Spawner());  
    }
 
+#if UNITY_EDITOR
    public void OnDrawGizmos()
    {
       UnityEditor.Handles.color = Color.yellow;
       UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.up, radius);
    }
+#endif
+
 
    public void SpawnCauldron()
    {
