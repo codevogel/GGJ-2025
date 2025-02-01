@@ -20,6 +20,11 @@ public class ButtonSelectedAudioTrigger : MonoBehaviour
       
    }
 
+   private void Awake()
+   {
+      
+   }
+
    private void Start()
    {
       eventSystem = FindAnyObjectByType<EventSystem>();
@@ -34,7 +39,7 @@ public class ButtonSelectedAudioTrigger : MonoBehaviour
    {
       if (eventSystem.currentSelectedGameObject != selectedObject && eventSystem.currentSelectedGameObject == gameObject)
       {
-         PlaySfx.instance.playOneShotSFX(selectAudioClip, transform, 2, 2, 1, 1, 0);
+         PlaySfx.instance.playOneShotSFX(selectAudioClip, transform, 1, 1, 1, 1, 0);
 
          // Reset the font style of the previously selected object
          if (previousSelectedObject != null)
