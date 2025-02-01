@@ -67,7 +67,7 @@ MonoBehaviour:
   _shadowPrefab: {fileID: 2792537990705311569, guid: 29ff90f46a0056f45bbf37adfae91f11, type: 3}
   _groundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 65
   _scaleFactor: 1
   _maxScale: 1
   _minScale: 0.5

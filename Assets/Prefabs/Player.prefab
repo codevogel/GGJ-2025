@@ -353,7 +353,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   B2bCollisions:
-  - {fileID: 8300000, guid: 81d2892cea660a14ab7c9efb9ab5593c, type: 3}
+  - {fileID: 8300000, guid: 4d390929e52dc8747a31f7f9d0a54d22, type: 3}
+  - {fileID: 8300000, guid: e49f9873eb61fa84484e5fb0678b038c, type: 3}
+  - {fileID: 8300000, guid: b6f50287a29ba94439e1a18c2f1889d8, type: 3}
+  - {fileID: 8300000, guid: 5d617a810bba13942a9f2576fedd1dca, type: 3}
   Burst:
   - {fileID: 8300000, guid: 569f430376d524f47a2e7383e72dba03, type: 3}
   - {fileID: 8300000, guid: 2a44847477156704abc2875dc4f0f735, type: 3}
