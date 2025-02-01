@@ -99,7 +99,7 @@ public class GameManager : MonoBehaviour
       currentRoutine = null;
       WinData.WinningPlayer = winner.name;
       WinData.playerCount = playerCount;
-      ScreenFaderManager.instance?.GoToSceneAsync(SceneManager.GetSceneByName("Victory Screen").buildIndex);
+      ScreenFaderManager.instance?.GoToSceneAsync(3);
       winnerName = winner.name;
    }
 
