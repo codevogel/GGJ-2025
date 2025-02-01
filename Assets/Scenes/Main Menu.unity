@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 20201, guid: 0000000000000000f000000000000000, type: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 686f7b4c3a8dcfb1f93c80830f87d89f, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -1928,7 +1928,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Title
+  m_text: Cauldron Clash
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c42bd57e18944b5408fdd9f6a048a322, type: 2}
   m_sharedMaterial: {fileID: -7275054445746765465, guid: c42bd57e18944b5408fdd9f6a048a322, type: 2}
