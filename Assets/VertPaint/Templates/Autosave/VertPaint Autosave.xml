@@ -4,10 +4,10 @@
   <togglePreview>true</togglePreview>
   <hideTransformHandle>true</hideTransformHandle>
   <brushSettings>
-    <radius>1,48</radius>
+    <radius>4,09</radius>
     <maxRadius>10</maxRadius>
     <delay>0,001</delay>
-    <opacity>0,308</opacity>
+    <opacity>0,133</opacity>
     <falloff>
       <key>
         <time>0</time>
