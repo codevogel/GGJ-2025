@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5166387020155435539}
   - component: {fileID: 1561648022901146597}
   - component: {fileID: -4562513348835858048}
+  - component: {fileID: 6579589251630239484}
   - component: {fileID: 5778822602988385212}
   m_Layer: 0
   m_Name: DynamicObstacle
@@ -166,6 +167,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyAfter: 7
+--- !u!114 &6579589251630239484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882160919698688989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acc529e191e312b47b9ad8974741392a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collisionSound: {fileID: 8300000, guid: 388bae2aa28062c4ea628822bfb37f81, type: 3}
 --- !u!114 &5778822602988385212
 MonoBehaviour:
   m_ObjectHideFlags: 0
