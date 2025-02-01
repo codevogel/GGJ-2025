@@ -2884,7 +2884,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8593550901227424086, guid: bb47dbd512e55df43810f15a5b8804b1, type: 3}
       propertyPath: spawnChancePerSecond
-      value: 0.1
+      value: 0.001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
