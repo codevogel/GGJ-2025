@@ -10,11 +10,31 @@ public class Player : MonoBehaviour
 
    private Rigidbody rb;
    private PlayerController playerController;
+   [SerializeField]
+   private float _bounceForce = 15;
+
+   // Bounce force is lower when you have more PickupCount (At at least 10 pickups, bounce force is 25% of the original value)
+   public float BounceForce
+   {
+      get
+      {
+         var percentage = Mathf.Clamp01(inflator.PickupCount / 10f);
+         return _bounceForce * (1 - percentage * 0.75f);
+      }
+   }
 
    private void Start()
    {
       rb = GetComponent<Rigidbody>();
       playerController = GetComponent<PlayerController>();
+   }
+
+   public void OnCollisionEnter(Collision collision)
+   {
+      if (collision.gameObject.TryGetComponent(out Player player))
+      {
+         rb.AddForce((transform.position - player.transform.position).normalized * BounceForce, ForceMode.Impulse);
+      }
    }
 
 
