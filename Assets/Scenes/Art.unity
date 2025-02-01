@@ -561,6 +561,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: TowerPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 4759103977599988525, guid: 9382bb19c02b46c44bd5108407c7cef6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4759103977599988525, guid: 9382bb19c02b46c44bd5108407c7cef6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4759103977599988525, guid: 9382bb19c02b46c44bd5108407c7cef6, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4759103977599988525, guid: 9382bb19c02b46c44bd5108407c7cef6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 4759103977599988525, guid: 9382bb19c02b46c44bd5108407c7cef6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926903165904554050, guid: 9382bb19c02b46c44bd5108407c7cef6, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 085a0324bdf503a45a3a60ceface34c4, type: 2}
     - target: {fileID: 6804362231559456179, guid: 9382bb19c02b46c44bd5108407c7cef6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.353141
