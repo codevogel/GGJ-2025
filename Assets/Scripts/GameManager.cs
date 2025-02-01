@@ -76,6 +76,10 @@ public class GameManager : MonoBehaviour
 
    public void StartGame()
    {
+      gameUI = FindAnyObjectByType<GameUI>();
+      playerSpawnPoints = GameObject.FindGameObjectsWithTag("PlayerSpawns");
+      InitializePlayers();
+      InitializeArena();
       for (int i = 0; i < players.Length; i++)
       {
          if (players[i] != null)
@@ -83,10 +87,6 @@ public class GameManager : MonoBehaviour
             playerScoreUIs[i].gameObject.SetActive(true);
          }
       }
-      gameUI = FindAnyObjectByType<GameUI>();
-      playerSpawnPoints = GameObject.FindGameObjectsWithTag("PlayerSpawns");
-      InitializePlayers();
-      InitializeArena();
 
       if (currentRoutine == null)
       {
@@ -116,7 +116,7 @@ public class GameManager : MonoBehaviour
 
    private void InitializeArena()
    {
-
+      playerScoreUIs = GameObject.FindGameObjectWithTag("Scores").GetComponent<ScoresContainer>().GetScores();
    }
 
    private GameObject DetermineWinner()
