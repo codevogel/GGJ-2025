@@ -136,7 +136,7 @@ MonoBehaviour:
   inflator: {fileID: 2633324300206216464}
   GFXWizard: {fileID: 897459077849651101}
   GFXBubble: {fileID: 7543508455299082032}
-  _bounceForce: 8
+  _bounceForce: 4
 --- !u!114 &2633324300206216464
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ public class LaBomba : MonoBehaviour
    [SerializeField] private float explosionRadius = 2, explosionForce = 12;
    [SerializeField] private LayerMask playerLayer;
    private Rigidbody rBody;
+   [SerializeField] private GameObject explosion;
 
    private void OnCollisionEnter(Collision collision)
    {
@@ -25,6 +26,7 @@ public class LaBomba : MonoBehaviour
             collider.attachedRigidbody.AddExplosionForce(explosionForce, transform.position, explosionRadius, 0, ForceMode.Impulse);
          }
       }
+      GameObject.Instantiate(explosion, transform.position, Quaternion.identity);
       Destroy(this.gameObject);
    }
 }
