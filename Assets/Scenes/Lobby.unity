@@ -934,18 +934,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1897137115}
-        m_TargetAssemblyTypeName: LocalLobbyHandler, Assembly-CSharp
-        m_MethodName: SetStartButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   m_PlayerLeftEvent:
     m_PersistentCalls:
       m_Calls:
@@ -957,18 +945,6 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.InputSystem.PlayerInput,
             Unity.InputSystem
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1897137115}
-        m_TargetAssemblyTypeName: LocalLobbyHandler, Assembly-CSharp
-        m_MethodName: SetStartButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1343,13 +1319,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9146bf8efafadb4ca4e6892857b2eac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeInRound: 10
+  timeInRound: 30
   countdownTime: 3
   playerSpawnPoints:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  winnerName: 
 --- !u!4 &1152948739
 Transform:
   m_ObjectHideFlags: 0
