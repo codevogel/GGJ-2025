@@ -94,7 +94,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _Discolor: 0
+    - _Discolor: 1
     - _Displace_Speed: 2
     - _DstBlend: 0
     - _DstBlendAlpha: 0
@@ -121,7 +121,7 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Discoloration: {r: 3.2910538, g: 0, b: 4, a: 1}
+    - _Discoloration: {r: 1.698399, g: 2.5503447, b: 3.243789, a: 0.3254902}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _ScrollSpeed: {r: 0, g: 0.3, b: 0, a: 0}
     - _ScrollSpeed_1: {r: 0.2, g: -0.1, b: 0, a: 0}
