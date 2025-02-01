@@ -15,22 +15,10 @@ public class ButtonSelectedAudioTrigger : MonoBehaviour
    [SerializeField] private AudioClip selectAudioClip;
    [SerializeField] private TMP_Text text;
 
-   private void Awake()
-   {
-      
-   }
-
-   private void Awake()
-   {
-      
-   }
-
    private void Start()
    {
       eventSystem = FindAnyObjectByType<EventSystem>();
       selectedObject = eventSystem.currentSelectedGameObject;
-
-
    }
 
    private GameObject previousSelectedObject;
