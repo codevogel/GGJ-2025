@@ -16,7 +16,7 @@ public class SpikeyWall : MonoBehaviour
    void Start()
    {
       originalPosition = transform.position;
-      extendedPosition = originalPosition + transform.forward * extendDistance;
+      extendedPosition = originalPosition - transform.up * extendDistance;
       StartCoroutine(ExtendCycle());
    }
 
