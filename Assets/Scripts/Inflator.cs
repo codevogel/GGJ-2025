@@ -61,13 +61,13 @@ public class Inflator : MonoBehaviour
       PickupCount = 0;
    }
 
-   void Update()
-   {
-      if (Input.GetKeyDown(KeyCode.Space))
-      {
-         Pop();
-      }
-   }
+   //void Update()
+   //{
+   //   if (Input.GetKeyDown(KeyCode.Space))
+   //   {
+   //      Pop();
+   //   }
+   //}
 
    private void AdjustInflation()
    {

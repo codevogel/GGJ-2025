@@ -20,7 +20,7 @@ public class PickupSpawner : MonoBehaviour
       var position = transform.position + randomUnitDisk * radius;
       var go = GameObject.Instantiate(prefab, transform.position + randomUnitDisk * radius, Quaternion.identity);
       go.transform.position += offset;
-      Debug.Log(go.transform.position);
+      //Debug.Log(go.transform.position);
       var pickup = go.GetComponent<Pickup>();
       pickup.DelayPickupable();
       return pickup;
