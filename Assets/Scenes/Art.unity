@@ -557,6 +557,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 244121854408254978, guid: e91dfb73a9a2a3c47911603b36a3f6fd, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 73e9b7e728d9f5044aeee3b8cf1d9a21, type: 2}
+    - target: {fileID: 244121854408254978, guid: e91dfb73a9a2a3c47911603b36a3f6fd, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 75157044a7f1c6340aa9bd7c937cb8f3, type: 2}
     - target: {fileID: 1380466899786538349, guid: e91dfb73a9a2a3c47911603b36a3f6fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.353142
@@ -600,6 +608,10 @@ PrefabInstance:
     - target: {fileID: 1757450556647294935, guid: e91dfb73a9a2a3c47911603b36a3f6fd, type: 3}
       propertyPath: m_Name
       value: TowerMesh 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055432382795117661, guid: e91dfb73a9a2a3c47911603b36a3f6fd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
