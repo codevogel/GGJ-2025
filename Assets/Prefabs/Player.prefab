@@ -405,6 +405,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   B2bCollisions:
   - {fileID: 8300000, guid: 81d2892cea660a14ab7c9efb9ab5593c, type: 3}
+  Burst:
+  - {fileID: 8300000, guid: 569f430376d524f47a2e7383e72dba03, type: 3}
+  - {fileID: 8300000, guid: 2a44847477156704abc2875dc4f0f735, type: 3}
+  - {fileID: 8300000, guid: d035e261416981648a7ff2dba2e4c81b, type: 3}
 --- !u!1 &8530130187469773462
 GameObject:
   m_ObjectHideFlags: 0
