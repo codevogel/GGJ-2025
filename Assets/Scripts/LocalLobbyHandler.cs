@@ -94,6 +94,7 @@ public class LocalLobbyHandler : MonoBehaviour
             if (!readyTexts[i].activeInHierarchy)
             {
                SetStartTimer("Ready Up To Start");
+            everyoneReady = false;
                 return;
             }
         }
@@ -109,9 +110,9 @@ public class LocalLobbyHandler : MonoBehaviour
 
    public void ToggleReadyUp(GameObject playerObject)
    {
-      PlaySfx.instance?.playOneShotSFX(playerReadyAudioClip, playerObject.transform, 1f, 1f, 1f, 1f, 0f);
       playerReadyTextDictionary[playerObject].SetActive(!playerReadyTextDictionary[playerObject].activeInHierarchy);
       CheckReady();
+      PlaySfx.instance?.playOneShotSFX(playerReadyAudioClip, playerObject.transform, 1f, 1f, 1f, 1f, 0f);
    }
 
    public void StartGame()
@@ -137,8 +138,9 @@ public class LocalLobbyHandler : MonoBehaviour
          timer += Time.deltaTime;
          if (!everyoneReady)
          {
-            StopCoroutine(readyRoutine);
             SetStartTimer("Ready Up To Start");
+            readyRoutine = null;
+            yield break;
          }
          SetStartTimer($"Starting in: {Mathf.Round(timeToStart - timer)}");
          yield return null;

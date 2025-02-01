@@ -10,7 +10,8 @@ public class Pickup : MonoBehaviour, IPickupable
 
    public void PickUp(Player picker)
    {
-      picker.PickUp(this);
+      if (picker.CanPickUp)
+         picker.PickUp(this);
    }
 
    public void OnTriggerEnter(Collider other)

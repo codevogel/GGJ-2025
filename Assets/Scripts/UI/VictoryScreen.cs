@@ -29,16 +29,10 @@ public class VictoryScreen : MonoBehaviour
       victoryText.text = $"{winner} wins!";
    }
 
-   public void Replay()
-   {
-      ScreenFaderManager.instance?.GoToSceneAsync(1);
-   }
-
    public void GoToMainMenu()
    {
       GameManager.instance.ClearPersistents();
       ScreenFaderManager.instance?.GoToSceneAsync(0);
-
    }
 
    public IEnumerator RunCountdown()
