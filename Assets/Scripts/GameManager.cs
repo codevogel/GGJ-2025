@@ -139,22 +139,30 @@ public class GameManager : MonoBehaviour
       while (time < timeInRound)
       {
          time += Time.deltaTime;
-         gameUI.UpdateTimer(Mathf.RoundToInt(timeInRound - time));
+         gameUI.UpdateTimer((Mathf.RoundToInt(timeInRound - time)).ToString());
          yield return null;
       }
+
+
 
       EndGame(DetermineWinner());
    }
 
    private IEnumerator RunCountdown()
    {
+      gameUI.UpdateCountdown("Get Ready!");
+      yield return new WaitForSeconds(1);
+
       float time = 0;
       while (time < countdownTime)
       {
          time += Time.deltaTime;
-         gameUI.UpdateCountdown(Mathf.RoundToInt(countdownTime - time));
+         gameUI.UpdateCountdown(Mathf.RoundToInt(countdownTime - time).ToString());
          yield return null;
       }
+
+      gameUI.UpdateCountdown("Start!");
+      yield return new WaitForSeconds(1);
 
       gameUI.DisableCountdown();
       foreach (var player in players)
