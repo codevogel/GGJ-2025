@@ -129,6 +129,63 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 1676996831871710364, guid: a9c0bebd1e2cc3636937a5ec3645d3a4, type: 3}
   m_PrefabInstance: {fileID: 1762011386}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &73824038
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4026186623697407273, guid: 7a03d555d215da94bb9221cbea8530e3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.306893
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026186623697407273, guid: 7a03d555d215da94bb9221cbea8530e3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.617696
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026186623697407273, guid: 7a03d555d215da94bb9221cbea8530e3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.713544
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026186623697407273, guid: 7a03d555d215da94bb9221cbea8530e3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026186623697407273, guid: 7a03d555d215da94bb9221cbea8530e3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026186623697407273, guid: 7a03d555d215da94bb9221cbea8530e3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026186623697407273, guid: 7a03d555d215da94bb9221cbea8530e3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026186623697407273, guid: 7a03d555d215da94bb9221cbea8530e3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026186623697407273, guid: 7a03d555d215da94bb9221cbea8530e3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026186623697407273, guid: 7a03d555d215da94bb9221cbea8530e3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6802855168540760105, guid: 7a03d555d215da94bb9221cbea8530e3, type: 3}
+      propertyPath: m_Name
+      value: FadeInFlag
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7a03d555d215da94bb9221cbea8530e3, type: 3}
 --- !u!137 &83335476 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 3482811751092260541, guid: a9c0bebd1e2cc3636937a5ec3645d3a4, type: 3}
@@ -1801,3 +1858,4 @@ SceneRoots:
   - {fileID: 925325321}
   - {fileID: 1206100339}
   - {fileID: 1879139198}
+  - {fileID: 73824038}

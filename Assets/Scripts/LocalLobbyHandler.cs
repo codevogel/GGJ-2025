@@ -65,7 +65,7 @@ public class LocalLobbyHandler : MonoBehaviour
             playerInput.gameObject.transform.rotation = Quaternion.identity;
             readyTogglerList.Add(playerInput.gameObject.GetComponent<LobbyReadyToggler>());
 
-            PlaySfx.instance?.playOneShotSFX(playerJoinAudioClip, playerSlots[i].transform, 1f, 1f, 1f, 1f, 0f);
+            PlaySfx.instance?.playOneShotSFX(playerJoinAudioClip, playerSlots[i].transform, 0.4f, 0.6f, 1f, 1f, 0f);
             playerReadyTextDictionary.Add(playerInput.gameObject, readyTexts[i]);
 
             readyTexts[i].GetComponent<TMP_Text>().text = "Not Ready";
@@ -120,7 +120,7 @@ public class LocalLobbyHandler : MonoBehaviour
          readyText.text = isReady ? "Ready" : "Not Ready";
       }
       CheckReady();
-      PlaySfx.instance?.playOneShotSFX(playerReadyAudioClip, playerObject.transform, 0.3f, 0.4f, 1f, 1f, 0f);
+      PlaySfx.instance?.playOneShotSFX(playerReadyAudioClip, playerObject.transform, 0.15f, 0.2f, 1f, 1f, 0f);
    }
 
    public void StartGame()

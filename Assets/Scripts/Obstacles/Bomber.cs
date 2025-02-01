@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bomber : MonoBehaviour
 {
-   [SerializeField] private float radius = 10, spawnTimer = 3f;
+   [SerializeField] private float radius = 10, mintime = 3f, maxtime = 6f;
    [SerializeField] private GameObject bombPrefab;
 
    private Coroutine warcrimeRoutine;
@@ -18,7 +18,7 @@ public class Bomber : MonoBehaviour
    {
       while (true)
       {
-         int rnd = Random.Range(1, 5);
+         float rnd = Random.Range(mintime, maxtime);
          yield return new WaitForSeconds(rnd);
 
          Vector2 randomCircle = Random.insideUnitCircle * radius;
