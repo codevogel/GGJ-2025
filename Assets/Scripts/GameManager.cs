@@ -9,7 +9,9 @@ public class GameManager : MonoBehaviour
    public static GameManager instance;
 
    private GameObject[] players = new GameObject[4];
+   [SerializeField] private PlayerScores[] playerScoreUIs = new PlayerScores[4];
    private Dictionary<GameObject, PlayerController> controllerDictionary = new Dictionary<GameObject, PlayerController>();
+   private Dictionary<GameObject, Inflator> inflatorDictionary = new Dictionary<GameObject, Inflator>();
    private int playerCount = 0;
 
    [SerializeField] private float timeInRound = 60;
@@ -48,6 +50,7 @@ public class GameManager : MonoBehaviour
          {
             players[i] = playerObject;
             controllerDictionary.Add(playerObject, playerObject.GetComponent<PlayerController>());
+            inflatorDictionary.Add(playerObject, playerObject.GetComponent<Inflator>());
             playerCount++;
             return;
          }
@@ -73,6 +76,13 @@ public class GameManager : MonoBehaviour
 
    public void StartGame()
    {
+      for (int i = 0; i < players.Length; i++)
+      {
+         if (players[i] != null)
+         {
+            playerScoreUIs[i].gameObject.SetActive(true);
+         }
+      }
       gameUI = FindAnyObjectByType<GameUI>();
       playerSpawnPoints = GameObject.FindGameObjectsWithTag("PlayerSpawns");
       InitializePlayers();
@@ -139,7 +149,14 @@ public class GameManager : MonoBehaviour
       while (time < timeInRound)
       {
          time += Time.deltaTime;
-         gameUI.UpdateTimer((Mathf.RoundToInt(timeInRound - time)).ToString());
+         gameUI.UpdateTimer(Mathf.RoundToInt(timeInRound - time).ToString());
+         for (int i = 0; i < players.Length; i++)
+         {
+            if (players[i] != null)
+            {
+               playerScoreUIs[i].SetScore(inflatorDictionary[players[i]].PickupCount.ToString());
+            }
+         }
          yield return null;
       }
 
