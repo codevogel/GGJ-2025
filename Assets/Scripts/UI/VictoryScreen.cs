@@ -29,13 +29,14 @@ public class VictoryScreen : MonoBehaviour
 
    public void Replay()
    {
-      SceneManager.LoadScene("Main");
+      ScreenFaderManager.instance?.GoToSceneAsync(0);
    }
 
    public void GoToMainMenu()
    {
       GameManager.instance.ClearPersistents();
-      SceneManager.LoadScene("Main Menu");
+      ScreenFaderManager.instance?.GoToSceneAsync(0);
+
    }
 
    public IEnumerator RunCountdown()

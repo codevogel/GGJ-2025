@@ -16,7 +16,7 @@ public class MainMenu : MonoBehaviour
    {
       PlaySfx.instance?.playOneShotSFX(startSFX, transform, 1f, 1f, 1f, 1f, 0f);
       yield return new WaitForSeconds(startSFX.length);
-      SceneManager.LoadScene("Lobby");
+      ScreenFaderManager.instance?.GoToSceneAsync(1);
    }
 
    public void QuitGame()
