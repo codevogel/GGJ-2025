@@ -209,6 +209,7 @@ MonoBehaviour:
   popForce: 250
   popForceVerticalMin: 5
   popForceVerticalMax: 15
+  playerSounds: {fileID: 8384767459990833422}
 --- !u!114 &5726049249601082918
 MonoBehaviour:
   m_ObjectHideFlags: 0
