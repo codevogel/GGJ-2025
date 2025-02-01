@@ -26,10 +26,18 @@ public class Cauldron : MonoBehaviour
    [SerializeField]
    GameObject explosion;
 
+   [SerializeField]
+   int minBubbleVel = 1;
+
+   [SerializeField]
+   int maxBubbleVel = 3;
+
 
    public UnityEvent ExplodeFeedForward;
 
    public UnityEvent ExplodeEvent;
+
+   public bool TestRun;
 
    [Space]
    [SerializeField] private bool doesDamage;
@@ -47,6 +55,7 @@ public class Cauldron : MonoBehaviour
       StartCoroutine(ExplodeTimer());
    }
 
+   /*
    void SpawnBubbles()
    {
       for (int i = 0; i < numBubbles; i++)
@@ -62,16 +71,55 @@ public class Cauldron : MonoBehaviour
          GameObject newBubble = Instantiate(bubblePrefab, spawnPosition, Quaternion.identity);
       }
    }
+   */
+
+   void SpawnBubbles()
+   {
+      for (int i = 0; i < numBubbles; i++)
+      {
+         float angle = (i / (float)numBubbles) * 2f * Mathf.PI;
+         float XOffset = Mathf.Cos(angle) * spawnRadius;
+         float zOffset = Mathf.Sin(angle) * spawnRadius;
+
+         Vector3 spawnPosition = new Vector3(
+             this.transform.position.x + XOffset,
+             this.transform.position.y + HeightOffset,
+             this.transform.position.z + zOffset
+         );
+
+         // Bubbel aanmaken
+         GameObject newBubble = Instantiate(bubblePrefab, spawnPosition, Quaternion.identity);
+
+         // Controleer of er een Rigidbody op zit, zo niet, voeg er een toe
+         Rigidbody rb = newBubble.GetComponent<Rigidbody>();
+         if (rb == null)
+         {
+            rb = newBubble.AddComponent<Rigidbody>();
+         }
+
+         rb.useGravity = false; // Gravity uitzetten zodat ze niet vallen
+
+         // Bereken de tangent richting (loodrecht op de straal)
+         Vector3 tangentDirection = new Vector3(-Mathf.Sin(angle), 0f, Mathf.Cos(angle)).normalized;
+
+         // Willekeurige snelheid instellen
+         float speed = Random.Range(minBubbleVel, maxBubbleVel);
+         rb.linearVelocity = tangentDirection * speed;
+      }
+   }
 
    IEnumerator ExplodeTimer()
    {
-      int nextToExplode = Random.Range(minExplodeTime, maxExplodeTime);
+      while (GameManager.instance?.gameRunning == true || TestRun)
+      {
+         int nextToExplode = Random.Range(minExplodeTime, maxExplodeTime);
 
-      yield return new WaitForSeconds(nextToExplode);
-      ExplodeFeedForward.Invoke();
+         yield return new WaitForSeconds(nextToExplode);
+         ExplodeFeedForward.Invoke();
 
-      yield return new WaitForSeconds(waitFeedForward);
-      ExplodeEvent.Invoke();
+         yield return new WaitForSeconds(waitFeedForward);
+         ExplodeEvent.Invoke();
+      }
    }
 
    private void ExplodeCauldron()
@@ -87,7 +135,7 @@ public class Cauldron : MonoBehaviour
                collider.GetComponentInParent<Player>().Pop();
          }
       }
-      Destroy(this.gameObject);
+      //Destroy(this.gameObject);
    }
 
    public void InstantiateExplosion()

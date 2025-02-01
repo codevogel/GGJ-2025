@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
    private GameUI gameUI;
    public string winnerName;
 
+   public bool gameRunning;
+
    private void Start()
    {
       DontDestroyOnLoad(this);
@@ -109,6 +111,7 @@ public class GameManager : MonoBehaviour
 
    private GameObject DetermineWinner()
    {
+      gameRunning = false;
       GameObject winner = players[0];
       int winnerCount = players[0].GetComponent<Inflator>().PickupCount;
       Debug.Log($"winnercount is {winnerCount}");
@@ -163,6 +166,7 @@ public class GameManager : MonoBehaviour
          }
       }
       currentRoutine = StartCoroutine(RunRound());
+      gameRunning = true;
    }
 
    public void ClearPersistents()
