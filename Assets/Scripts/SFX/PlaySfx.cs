@@ -1,5 +1,4 @@
 using UnityEngine;
-
 [RequireComponent(typeof(AudioSource))]
 public class PlaySfx : MonoBehaviour
 {
@@ -14,6 +13,7 @@ public class PlaySfx : MonoBehaviour
         {
             instance = this;
             audioSource = GetComponent<AudioSource>();
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
