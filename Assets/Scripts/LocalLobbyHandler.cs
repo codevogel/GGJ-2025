@@ -118,7 +118,7 @@ public class LocalLobbyHandler : MonoBehaviour
    public void ReturnToMainMenu()
    {
       Destroy(GameManager.instance.gameObject);
-      SceneManager.LoadScene("Main Menu");
+        ScreenFaderManager.instance?.GoToSceneAsync(0); 
    }
 
    private IEnumerator RunStartTimer()
