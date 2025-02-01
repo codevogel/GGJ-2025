@@ -6,11 +6,13 @@ public class PickupSpawner : MonoBehaviour
    public float radius = 10f;
    public List<Pickup> pickupPrefabs = new();
 
+#if UNITY_EDITOR
    public void OnDrawGizmos()
    {
       UnityEditor.Handles.color = Color.yellow;
       UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.up, radius);
    }
+#endif
 
    public Pickup SpawnPickup(Vector3 offset)
    {
