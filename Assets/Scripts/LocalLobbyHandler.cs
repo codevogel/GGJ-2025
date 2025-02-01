@@ -120,7 +120,7 @@ public class LocalLobbyHandler : MonoBehaviour
          readyText.text = isReady ? "Ready" : "Not Ready";
       }
       CheckReady();
-      PlaySfx.instance?.playOneShotSFX(playerReadyAudioClip, playerObject.transform, 1f, 1f, 1f, 1f, 0f);
+      PlaySfx.instance?.playOneShotSFX(playerReadyAudioClip, playerObject.transform, 0.3f, 0.4f, 1f, 1f, 0f);
    }
 
    public void StartGame()
