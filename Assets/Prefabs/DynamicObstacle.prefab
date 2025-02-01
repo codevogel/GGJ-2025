@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7266193840857691591}
   - component: {fileID: 5166387020155435539}
   - component: {fileID: 1561648022901146597}
+  - component: {fileID: -4562513348835858048}
   m_Layer: 0
   m_Name: DynamicObstacle
   m_TagString: Untagged
@@ -151,6 +152,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-4562513348835858048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882160919698688989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d1e87d027d2f8045b9d6697ba5d33bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyAfter: 3
 --- !u!1001 &7283004529822277422
 PrefabInstance:
   m_ObjectHideFlags: 0
