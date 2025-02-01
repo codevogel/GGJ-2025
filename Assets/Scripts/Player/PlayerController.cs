@@ -109,13 +109,13 @@ public class PlayerController : MonoBehaviour
       // move
       Vector3 moveForceVector = new Vector3(movementInput.x, 0, movementInput.y) * moveForce;
 
-      var dot = Vector3.Dot(rigidBody.linearVelocity.normalized, moveForceVector.normalized);
+      //var dot = Vector3.Dot(rigidBody.linearVelocity.normalized, moveForceVector.normalized);
       //Debug.Log(dot);
-      if (dot < 0.5f)
+      //if (dot < 0.5f)
       {
-         moveForceVector *= movementSpeedBoostWhenMovingOpposite; // Boost factor (adjust as needed)
+         //moveForceVector *= movementSpeedBoostWhenMovingOpposite; // Boost factor (adjust as needed)
       }
-      rigidBody.AddForce(moveForceVector);
+      rigidBody.AddForce(moveForceVector, ForceMode.Acceleration);
 
       //// dash
       //if (isDashing && dashCooldownCoroutine == null && movementInput != Vector2.zero)
