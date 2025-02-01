@@ -45,5 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 20
-  spawnChancePerSecond: 0.1
+  spawnChancePerSecond: 0.001
   bombPrefab: {fileID: 3239929843228620714, guid: 0f1c41a74916e3341b68eb778e5a3504, type: 3}
