@@ -102,12 +102,12 @@ public class LocalLobbyHandler : MonoBehaviour
 
    public void StartGame()
    {
-      SceneManager.LoadScene("Main");
+      ScreenFaderManager.instance?.GoToSceneAsync(2);
    }
 
    public void ReturnToMainMenu()
    {
       Destroy(GameManager.instance.gameObject);
-      SceneManager.LoadScene("Main Menu");
-   }
+        ScreenFaderManager.instance?.GoToSceneAsync(0);
+    }
 }
