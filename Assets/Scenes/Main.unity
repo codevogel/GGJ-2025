@@ -304,6 +304,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a77d835e1d92b2d4fb5ec052d196b3d6, type: 3}
+--- !u!1001 &235514248
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5985758588660277706, guid: c13b37770dd6b48418a5c641844c49c4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.3494368
+      objectReference: {fileID: 0}
+    - target: {fileID: 5985758588660277706, guid: c13b37770dd6b48418a5c641844c49c4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.376802
+      objectReference: {fileID: 0}
+    - target: {fileID: 5985758588660277706, guid: c13b37770dd6b48418a5c641844c49c4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 5985758588660277706, guid: c13b37770dd6b48418a5c641844c49c4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5985758588660277706, guid: c13b37770dd6b48418a5c641844c49c4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5985758588660277706, guid: c13b37770dd6b48418a5c641844c49c4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5985758588660277706, guid: c13b37770dd6b48418a5c641844c49c4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5985758588660277706, guid: c13b37770dd6b48418a5c641844c49c4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5985758588660277706, guid: c13b37770dd6b48418a5c641844c49c4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5985758588660277706, guid: c13b37770dd6b48418a5c641844c49c4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6366540748978305904, guid: c13b37770dd6b48418a5c641844c49c4, type: 3}
+      propertyPath: m_Name
+      value: Cauldron
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c13b37770dd6b48418a5c641844c49c4, type: 3}
 --- !u!1 &276388722
 GameObject:
   m_ObjectHideFlags: 0
@@ -2444,6 +2501,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Screen Fade Plane
       objectReference: {fileID: 0}
+    - target: {fileID: 2895193981527791764, guid: fb96a5a716dabd3469d8275afcfb1089, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2616,3 +2677,4 @@ SceneRoots:
   - {fileID: 818476394}
   - {fileID: 742703983}
   - {fileID: 1671594529}
+  - {fileID: 235514248}

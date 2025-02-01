@@ -74,7 +74,7 @@ public class Cauldron : MonoBehaviour
    public void InstantiateExplosion()
    {
       Instantiate(explosion, this.transform.position, Quaternion.identity);
-      PlaySfx.instance?.playOneShotSFX(_explosionSound, transform, 1f, 1f, 1f, 1f, 0f);
+      PlaySfx.instance?.playOneShotSFX(_explosionSound, transform, 0.6f, 0.8f, 1f, 1f, 0f);
 
    }
 
