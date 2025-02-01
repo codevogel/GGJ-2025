@@ -8,6 +8,8 @@ public class ScreenFaderManager : MonoBehaviour
 {
     public ScreenFader screenFader;
 
+    AudioFader audioFader;
+
     // singelton
     public static ScreenFaderManager instance;
 
@@ -37,6 +39,13 @@ public class ScreenFaderManager : MonoBehaviour
 
     public void GoToSceneAsync(int sceneIndex)
     {
+        
+         audioFader = FindFirstObjectByType<AudioFader>();
+         if(audioFader != null)
+         {
+             audioFader.FadeOut();
+         }
+  
         StartCoroutine(GoToSceneRoutineAsync(sceneIndex));
     }
     IEnumerator GoToSceneRoutineAsync(int sceneIndex)

@@ -9,15 +9,11 @@ public class MainMenu : MonoBehaviour
    [SerializeField] private AudioClip startSFX;
     public void StartGame()
    {
-      StartCoroutine(IEstartGame());
+      PlaySfx.instance?.playOneShotSFX(startSFX, transform, 1f, 1f, 1f, 1f, 0f);
+      ScreenFaderManager.instance?.GoToSceneAsync(1);
+
    }
 
-   IEnumerator IEstartGame()
-   {
-      PlaySfx.instance?.playOneShotSFX(startSFX, transform, 1f, 1f, 1f, 1f, 0f);
-      yield return new WaitForSeconds(startSFX.length);
-      ScreenFaderManager.instance?.GoToSceneAsync(1);
-   }
 
    public void QuitGame()
    {
