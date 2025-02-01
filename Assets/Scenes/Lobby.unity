@@ -1707,8 +1707,12 @@ MonoBehaviour:
   - {fileID: 2100000, guid: c7ddc1b3e1bdd1f44bad5a29525e4ef3, type: 2}
   - {fileID: 2100000, guid: 960e31a5f8741234a9400d9301665770, type: 2}
   - {fileID: 2100000, guid: a49f0417e1bb4a448901e199af3d4ad8, type: 2}
-  baseWizardMat: {fileID: 2100000, guid: 02e6a877faef9824daad4fe92e0609b8, type: 2}
-  playerJoinAudioClip: {fileID: 8300000, guid: 466ae32c7cfe94c4ebb5c17e2cad84fa, type: 3}
+  bubbleMats:
+  - {fileID: 2100000, guid: 15b92de2a4fa11648a53725f3c17538e, type: 2}
+  - {fileID: 2100000, guid: 0fcdb4eaf802b5f4481497fdaa9a9ad6, type: 2}
+  - {fileID: 2100000, guid: 9fc28604a1a5174459dd3beab1da1e5b, type: 2}
+  - {fileID: 2100000, guid: a54757b599512504aa00d7b933e015d5, type: 2}
+  playerJoinAudioClip: {fileID: 8300000, guid: cef3f5154b2ae4d488ce85dd5f3cdcd3, type: 3}
   timeToStart: 5
 --- !u!4 &1897137116
 Transform:

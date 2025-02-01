@@ -518,6 +518,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wizard
       objectReference: {fileID: 0}
+    - target: {fileID: 3934389929829486460, guid: a395ff213661f5141885d9f7effd55be, type: 3}
+      propertyPath: bubbleRend
+      value: 
+      objectReference: {fileID: 7402653823994538649}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
