@@ -205,7 +205,7 @@ MonoBehaviour:
   pickupSpawner: {fileID: 2200695729292287219}
   bubblePickupPrefab: {fileID: 2373577413581710993, guid: bdb4ae2dcb79cd11a8cbc941a6d38d74, type: 3}
   sphere: {fileID: 6343811923284705630}
-  incrementalScale: 0.25
+  incrementalScale: 0.1
   popForce: 250
   popForceVerticalMin: 5
   popForceVerticalMax: 15
