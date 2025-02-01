@@ -1928,7 +1928,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Title
+  m_text: Cauldron Clash
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c42bd57e18944b5408fdd9f6a048a322, type: 2}
   m_sharedMaterial: {fileID: -7275054445746765465, guid: c42bd57e18944b5408fdd9f6a048a322, type: 2}
