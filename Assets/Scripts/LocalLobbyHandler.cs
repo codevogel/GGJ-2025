@@ -60,7 +60,7 @@ public class LocalLobbyHandler : MonoBehaviour
             playerInput.gameObject.transform.rotation = Quaternion.identity;
             readyTogglerList.Add(playerInput.gameObject.GetComponent<LobbyReadyToggler>());
 
-            PlaySfx.instance.playOneShotSFX(playerJoinAudioClip, playerSlots[i].transform);
+            PlaySfx.instance.playOneShotSFX(playerJoinAudioClip, playerSlots[i].transform, 1f, 1f, 1f, 1f, 0f);
             playerReadyTextDictionary.Add(playerInput.gameObject, readyTexts[i]);
 
             //playerInput.GetComponent<LocalLobbyTag>().ReadyText = readyTexts[i];
