@@ -25,6 +25,9 @@ public class Inflator : MonoBehaviour
    [SerializeField]
    private float popForceVerticalMax = 15;
 
+   [SerializeField]
+   private PlayerSounds playerSounds;
+
    public int PickupCount
    {
       get => _pickupCount;
@@ -42,8 +45,9 @@ public class Inflator : MonoBehaviour
 
    public void Pop()
    {
+      playerSounds.onDeath();
       List<Pickup> spawnedPickups = new List<Pickup>();
-      for (var i = 0; i < PickupCount; i++)
+      for (var i = 0; i < Mathf.Max(PickupCount, 5); i++)
       {
          spawnedPickups.Add(pickupSpawner.SpawnPickup(Vector3.up));
       }
