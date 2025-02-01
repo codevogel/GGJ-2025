@@ -17,12 +17,14 @@ public class Cauldron : MonoBehaviour
 
    [SerializeField]
    public int waitFeedForward;
+   [SerializeField] private AudioClip _explosionSound;
 
    [SerializeField]
    bool testSpawn;
 
    [SerializeField]
    GameObject explosion;
+
 
    public UnityEvent ExplodeFeedForward;
 
@@ -72,6 +74,8 @@ public class Cauldron : MonoBehaviour
    public void InstantiateExplosion()
    {
       Instantiate(explosion, this.transform.position, Quaternion.identity);
+      PlaySfx.instance?.playOneShotSFX(_explosionSound, transform, 1f, 1f, 1f, 1f, 0f);
+
    }
 
 }

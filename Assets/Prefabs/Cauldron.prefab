@@ -547,15 +547,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b8aad6e70a5812f4db91e86e38e322fd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.95879173
+      value: 3.0041637
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b8aad6e70a5812f4db91e86e38e322fd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.1500001
+      value: 1.85
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b8aad6e70a5812f4db91e86e38e322fd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.4505739
+      value: -3.239306
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b8aad6e70a5812f4db91e86e38e322fd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -590,6 +590,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: b8aad6e70a5812f4db91e86e38e322fd, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: b8aad6e70a5812f4db91e86e38e322fd, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 92bb61d0c2222784fbb8beb515cdda93, type: 2}
@@ -619,6 +623,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b8aad6e70a5812f4db91e86e38e322fd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 940953963260943832}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b8aad6e70a5812f4db91e86e38e322fd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7134848368341859540}
   m_SourcePrefab: {fileID: 100100000, guid: b8aad6e70a5812f4db91e86e38e322fd, type: 3}
 --- !u!4 &5985758588660277706 stripped
 Transform:
@@ -649,6 +656,7 @@ MonoBehaviour:
   minExplodeTime: 5
   maxExplodeTime: 10
   waitFeedForward: 4
+  _explosionSound: {fileID: 8300000, guid: 43a0dc435662c094b897b824a80dc0a9, type: 3}
   testSpawn: 0
   explosion: {fileID: 1196501274694262220, guid: 2109abb3e88f9de4bb64598163214834, type: 3}
   ExplodeFeedForward:
@@ -717,3 +725,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.9170687, y: 1.7246127, z: 2.9170687}
   m_Center: {x: 0, y: 0.8596945, z: 0}
+--- !u!114 &7134848368341859540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6366540748978305904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7103f8982f16b8f4297a708a7c32846c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shadowPrefab: {fileID: 2792537990705311569, guid: 29ff90f46a0056f45bbf37adfae91f11, type: 3}
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 1
+  _scaleFactor: 0.5
+  _maxScale: 5
+  _minScale: 2
