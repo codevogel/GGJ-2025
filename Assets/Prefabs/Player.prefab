@@ -189,7 +189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inflator: {fileID: 2633324300206216464}
   GFX: {fileID: 897459077849651101}
-  _bounceForce: 12
+  _bounceForce: 8
 --- !u!114 &2633324300206216464
 MonoBehaviour:
   m_ObjectHideFlags: 0
