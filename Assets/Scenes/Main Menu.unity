@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 6119992}
   - component: {fileID: 6119991}
   - component: {fileID: 6119990}
+  - component: {fileID: 6119993}
   m_Layer: 5
   m_Name: Start Button
   m_TagString: Untagged
@@ -252,6 +253,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6119988}
   m_CullTransparentMesh: 1
+--- !u!114 &6119993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6119988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc3df72e4bf7b28489392c346fc70fbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectAudioClip: {fileID: 8300000, guid: d6784bb7065461440af834a5adc1d0dd, type: 3}
 --- !u!1 &415910924
 GameObject:
   m_ObjectHideFlags: 0
@@ -1278,6 +1292,7 @@ GameObject:
   - component: {fileID: 1475116963}
   - component: {fileID: 1475116962}
   - component: {fileID: 1475116961}
+  - component: {fileID: 1475116964}
   m_Layer: 5
   m_Name: Controls Button
   m_TagString: Untagged
@@ -1399,6 +1414,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1475116959}
   m_CullTransparentMesh: 1
+--- !u!114 &1475116964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475116959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc3df72e4bf7b28489392c346fc70fbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectAudioClip: {fileID: 8300000, guid: d6784bb7065461440af834a5adc1d0dd, type: 3}
 --- !u!1 &1519217885
 GameObject:
   m_ObjectHideFlags: 0
@@ -1532,6 +1560,7 @@ GameObject:
   - component: {fileID: 1593939227}
   - component: {fileID: 1593939226}
   - component: {fileID: 1593939225}
+  - component: {fileID: 1593939228}
   m_Layer: 5
   m_Name: Quit Button
   m_TagString: Untagged
@@ -1653,6 +1682,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1593939223}
   m_CullTransparentMesh: 1
+--- !u!114 &1593939228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593939223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc3df72e4bf7b28489392c346fc70fbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectAudioClip: {fileID: 8300000, guid: d6784bb7065461440af834a5adc1d0dd, type: 3}
 --- !u!1 &1622316939
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,7 +19,7 @@ public class LocalLobbyHandler : MonoBehaviour
 
    [Space]
    [SerializeField] private Material[] wizardMats;
-   [SerializeField] private Material baseWizardMat;
+   [SerializeField] private Material[] bubbleMats;
    [SerializeField] AudioClip playerJoinAudioClip;
 
     public static LocalLobbyHandler instance;
@@ -37,7 +37,10 @@ public class LocalLobbyHandler : MonoBehaviour
 
    private void SetWizardColor(GameObject player, int playerSlotIndex)
    {
-      player.GetComponent<PlayerColorer>().ColorWizard(wizardMats[playerSlotIndex]);
+      PlayerColorer colorer = player.GetComponent<PlayerColorer>();
+      colorer.ColorWizard(wizardMats[playerSlotIndex]);
+      colorer.ColorBubble(bubbleMats[playerSlotIndex]);
+
    }
 
    public void AddPlayer(PlayerInput playerInput)

@@ -1430,6 +1430,7 @@ GameObject:
   - component: {fileID: 1710731187}
   - component: {fileID: 1710731186}
   - component: {fileID: 1710731185}
+  - component: {fileID: 1710731188}
   m_Layer: 5
   m_Name: Quit To Menu Button
   m_TagString: Untagged
@@ -1551,6 +1552,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1710731183}
   m_CullTransparentMesh: 1
+--- !u!114 &1710731188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710731183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc3df72e4bf7b28489392c346fc70fbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectAudioClip: {fileID: 8300000, guid: d6784bb7065461440af834a5adc1d0dd, type: 3}
 --- !u!1 &2063304370
 GameObject:
   m_ObjectHideFlags: 0
@@ -1563,6 +1577,7 @@ GameObject:
   - component: {fileID: 2063304374}
   - component: {fileID: 2063304373}
   - component: {fileID: 2063304372}
+  - component: {fileID: 2063304375}
   m_Layer: 5
   m_Name: Replay Button
   m_TagString: Untagged
@@ -1684,6 +1699,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2063304370}
   m_CullTransparentMesh: 1
+--- !u!114 &2063304375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063304370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc3df72e4bf7b28489392c346fc70fbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectAudioClip: {fileID: 8300000, guid: d6784bb7065461440af834a5adc1d0dd, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
