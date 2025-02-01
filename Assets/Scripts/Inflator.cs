@@ -47,7 +47,7 @@ public class Inflator : MonoBehaviour
    {
       playerSounds.onDeath();
       List<Pickup> spawnedPickups = new List<Pickup>();
-      for (var i = 0; i < Mathf.FloorToInt(PickupCount / 2); i++)
+      for (var i = 0; i < Mathf.Min(PickupCount, 6); i++)
       {
          spawnedPickups.Add(pickupSpawner.SpawnPickup(Vector3.up));
       }
@@ -58,7 +58,7 @@ public class Inflator : MonoBehaviour
          pickup.GetComponent<Rigidbody>().AddExplosionForce(popForce, pickup.transform.position + randomPoint, 10);
          pickup.GetComponent<Rigidbody>().AddForce(Vector3.up * Random.Range(popForceVerticalMin, popForceVerticalMax), ForceMode.Impulse);
       }
-      PickupCount = 0;
+      PickupCount /= 2;
    }
 
    //void Update()
