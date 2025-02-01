@@ -21,6 +21,7 @@ public class LocalLobbyHandler : MonoBehaviour
    [SerializeField] private Material[] wizardMats;
    [SerializeField] private Material[] bubbleMats;
    [SerializeField] AudioClip playerJoinAudioClip;
+   [SerializeField] AudioClip playerReadyAudioClip;
 
     public static LocalLobbyHandler instance;
    private bool everyoneReady;
@@ -108,6 +109,7 @@ public class LocalLobbyHandler : MonoBehaviour
 
    public void ToggleReadyUp(GameObject playerObject)
    {
+      PlaySfx.instance?.playOneShotSFX(playerReadyAudioClip, playerObject.transform, 1f, 1f, 1f, 1f, 0f);
       playerReadyTextDictionary[playerObject].SetActive(!playerReadyTextDictionary[playerObject].activeInHierarchy);
       CheckReady();
    }

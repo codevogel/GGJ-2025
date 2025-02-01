@@ -1770,6 +1770,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 9fc28604a1a5174459dd3beab1da1e5b, type: 2}
   - {fileID: 2100000, guid: a54757b599512504aa00d7b933e015d5, type: 2}
   playerJoinAudioClip: {fileID: 8300000, guid: cef3f5154b2ae4d488ce85dd5f3cdcd3, type: 3}
+  playerReadyAudioClip: {fileID: 8300000, guid: 6e7c246653c03474186280457f9c5bf1, type: 3}
   timeToStart: 5
 --- !u!4 &1897137116
 Transform:

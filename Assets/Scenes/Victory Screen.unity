@@ -1564,7 +1564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc3df72e4bf7b28489392c346fc70fbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectAudioClip: {fileID: 8300000, guid: d6784bb7065461440af834a5adc1d0dd, type: 3}
+  selectAudioClip: {fileID: 8300000, guid: 4d017d816d3a684448b218eba92c5678, type: 3}
 --- !u!1 &2063304370
 GameObject:
   m_ObjectHideFlags: 0
@@ -1711,7 +1711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc3df72e4bf7b28489392c346fc70fbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectAudioClip: {fileID: 8300000, guid: d6784bb7065461440af834a5adc1d0dd, type: 3}
+  selectAudioClip: {fileID: 8300000, guid: 4d017d816d3a684448b218eba92c5678, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
