@@ -20,20 +20,6 @@ public class ButtonSelectedAudioTrigger : MonoBehaviour
       
    }
 
-   private void Awake()
-   {
-      
-   }
-
-   private void Awake()
-   {
-      
-   }
-
-   private void Awake()
-   {
-      
-   }
 
    private void Start()
    {
