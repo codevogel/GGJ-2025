@@ -5,14 +5,14 @@ public class GameUI : MonoBehaviour
 {
    [SerializeField] private TMP_Text countdownText, playTimerText;
    
-   public void UpdateTimer(int time)
+   public void UpdateTimer(string text)
    {
-      playTimerText.text = time.ToString();
+      playTimerText.text = text;
    }
 
-   public void UpdateCountdown(int time)
+   public void UpdateCountdown(string time)
    {
-      countdownText.text = time.ToString();
+      countdownText.text = time;
    }
 
    public void DisableCountdown()

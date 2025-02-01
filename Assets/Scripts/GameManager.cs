@@ -76,6 +76,10 @@ public class GameManager : MonoBehaviour
 
    public void StartGame()
    {
+      gameUI = FindAnyObjectByType<GameUI>();
+      playerSpawnPoints = GameObject.FindGameObjectsWithTag("PlayerSpawns");
+      InitializePlayers();
+      InitializeArena();
       for (int i = 0; i < players.Length; i++)
       {
          if (players[i] != null)
@@ -83,10 +87,6 @@ public class GameManager : MonoBehaviour
             playerScoreUIs[i].gameObject.SetActive(true);
          }
       }
-      gameUI = FindAnyObjectByType<GameUI>();
-      playerSpawnPoints = GameObject.FindGameObjectsWithTag("PlayerSpawns");
-      InitializePlayers();
-      InitializeArena();
 
       if (currentRoutine == null)
       {
@@ -97,7 +97,9 @@ public class GameManager : MonoBehaviour
    private void EndGame(GameObject winner)
    {
       currentRoutine = null;
-      ScreenFaderManager.instance?.GoToSceneAsync(3);
+      WinData.WinningPlayer = winner.name;
+      WinData.playerCount = playerCount;
+      ScreenFaderManager.instance?.GoToSceneAsync(SceneManager.GetSceneByName("Victory Screen").buildIndex);
       winnerName = winner.name;
    }
 
@@ -116,7 +118,7 @@ public class GameManager : MonoBehaviour
 
    private void InitializeArena()
    {
-
+      playerScoreUIs = GameObject.FindGameObjectWithTag("Scores").GetComponent<ScoresContainer>().GetScores();
    }
 
    private GameObject DetermineWinner()
@@ -149,7 +151,7 @@ public class GameManager : MonoBehaviour
       while (time < timeInRound)
       {
          time += Time.deltaTime;
-         gameUI.UpdateTimer(Mathf.RoundToInt(timeInRound - time));
+         gameUI.UpdateTimer(Mathf.RoundToInt(timeInRound - time).ToString());
          for (int i = 0; i < players.Length; i++)
          {
             if (players[i] != null)
@@ -160,18 +162,26 @@ public class GameManager : MonoBehaviour
          yield return null;
       }
 
+
+
       EndGame(DetermineWinner());
    }
 
    private IEnumerator RunCountdown()
    {
+      gameUI.UpdateCountdown("Get Ready!");
+      yield return new WaitForSeconds(1);
+
       float time = 0;
       while (time < countdownTime)
       {
          time += Time.deltaTime;
-         gameUI.UpdateCountdown(Mathf.RoundToInt(countdownTime - time));
+         gameUI.UpdateCountdown(Mathf.RoundToInt(countdownTime - time).ToString());
          yield return null;
       }
+
+      gameUI.UpdateCountdown("Start!");
+      yield return new WaitForSeconds(1);
 
       gameUI.DisableCountdown();
       foreach (var player in players)

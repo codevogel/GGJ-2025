@@ -146,7 +146,7 @@ Transform:
   m_GameObject: {fileID: 41612399}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.56, y: 7.5, z: 0}
+  m_LocalPosition: {x: 8.52, y: 9.04, z: -3.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -167,7 +167,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 41612399}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -340,7 +340,7 @@ Transform:
   m_GameObject: {fileID: 271957259}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.563, y: 7.5, z: -0.059}
+  m_LocalPosition: {x: 2.31, y: 9.04, z: -3.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -361,7 +361,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 271957259}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -910,8 +910,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0, g: 0.9335346, b: 0.9924528, a: 1}
-      maxColor: {r: 0.13396227, g: 0.8723403, b: 1, a: 1}
+      minColor: {r: 0, g: 0.5528785, b: 0.99215686, a: 1}
+      maxColor: {r: 0, g: 0.2067275, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -6004,45 +6004,49 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cloud Shader
       objectReference: {fileID: 0}
-    - target: {fileID: 6812981161496183464, guid: 14339c40bc5de7b40bbb481f1dff6d07, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4.8099976
-      objectReference: {fileID: 0}
-    - target: {fileID: 6812981161496183464, guid: 14339c40bc5de7b40bbb481f1dff6d07, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -11.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6812981161496183464, guid: 14339c40bc5de7b40bbb481f1dff6d07, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -16.21
-      objectReference: {fileID: 0}
-    - target: {fileID: 6812981161496183464, guid: 14339c40bc5de7b40bbb481f1dff6d07, type: 3}
-      propertyPath: m_LocalRotation.w
+    - target: {fileID: 714195421985267522, guid: 14339c40bc5de7b40bbb481f1dff6d07, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6812981161496183464, guid: 14339c40bc5de7b40bbb481f1dff6d07, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812981161496183464, guid: 14339c40bc5de7b40bbb481f1dff6d07, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812981161496183464, guid: 14339c40bc5de7b40bbb481f1dff6d07, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812981161496183464, guid: 14339c40bc5de7b40bbb481f1dff6d07, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.995663
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812981161496183464, guid: 14339c40bc5de7b40bbb481f1dff6d07, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.074935965
       objectReference: {fileID: 0}
     - target: {fileID: 6812981161496183464, guid: 14339c40bc5de7b40bbb481f1dff6d07, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.015806388
       objectReference: {fileID: 0}
     - target: {fileID: 6812981161496183464, guid: 14339c40bc5de7b40bbb481f1dff6d07, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.05282035
       objectReference: {fileID: 0}
     - target: {fileID: 6812981161496183464, guid: 14339c40bc5de7b40bbb481f1dff6d07, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -8.679
       objectReference: {fileID: 0}
     - target: {fileID: 6812981161496183464, guid: 14339c40bc5de7b40bbb481f1dff6d07, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 1.366
       objectReference: {fileID: 0}
     - target: {fileID: 6812981161496183464, guid: 14339c40bc5de7b40bbb481f1dff6d07, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 5.97
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6361,8 +6365,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0, g: 0.9335346, b: 0.9924528, a: 1}
-      maxColor: {r: 0.13396227, g: 0.8723403, b: 1, a: 1}
+      minColor: {r: 0.5439223, g: 0, b: 0.99215686, a: 1}
+      maxColor: {r: 1, g: 0.13333333, b: 0.7170255, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -10913,7 +10917,7 @@ GameObject:
   - component: {fileID: 904848698}
   - component: {fileID: 904848697}
   m_Layer: 0
-  m_Name: CauldronLobby (1)
+  m_Name: CauldronLobby_Purple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11039,7 +11043,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 92bb61d0c2222784fbb8beb515cdda93, type: 2}
+  - {fileID: 2100000, guid: 0289fab4c05022b4994418387d1651c7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11077,15 +11081,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 904848696}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.56, y: 5.3, z: -0.045}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalRotation: {x: 0.0008934821, y: 0.052919906, z: -0.0000859735, w: 0.9985984}
+  m_LocalPosition: {x: 2.2472098, y: 5.3098907, z: -3.0602841}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 707804745}
   - {fileID: 301418728}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.103, y: 6.067, z: -0.004}
 --- !u!1 &926084725
 GameObject:
   m_ObjectHideFlags: 0
@@ -11759,7 +11763,7 @@ Transform:
   m_GameObject: {fileID: 1051516356}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.482, y: 7.5, z: -0.054}
+  m_LocalPosition: {x: -3.13, y: 9.04, z: -2.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11780,7 +11784,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1051516356}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -12266,8 +12270,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0, g: 0.9335346, b: 0.9924528, a: 1}
-      maxColor: {r: 0.13396227, g: 0.8723403, b: 1, a: 1}
+      minColor: {r: 0.99215686, g: 0.7056984, b: 0, a: 1}
+      maxColor: {r: 1, g: 0.39377016, b: 0.13333333, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -16681,7 +16685,7 @@ GameObject:
   - component: {fileID: 1120752256}
   - component: {fileID: 1120752255}
   m_Layer: 0
-  m_Name: CauldronLobby (3)
+  m_Name: CauldronLobby_Blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16807,7 +16811,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 92bb61d0c2222784fbb8beb515cdda93, type: 2}
+  - {fileID: 2100000, guid: fd0932b645face743a3d0d3958cb6d70, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -16845,15 +16849,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1120752254}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.04, y: 5.3, z: -0.045}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalRotation: {x: 0.0008934821, y: 0.052919906, z: -0.0000859735, w: 0.9985984}
+  m_LocalPosition: {x: -9.114233, y: 5.31037, z: -1.8450656}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 321711776}
   - {fileID: 531953346}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.103, y: 6.067, z: -0.004}
 --- !u!1 &1152388513
 GameObject:
   m_ObjectHideFlags: 0
@@ -17192,7 +17196,7 @@ GameObject:
   - component: {fileID: 1359918710}
   - component: {fileID: 1359918709}
   m_Layer: 0
-  m_Name: CauldronLobby (2)
+  m_Name: CauldronLobby_Orange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17318,7 +17322,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 92bb61d0c2222784fbb8beb515cdda93, type: 2}
+  - {fileID: 2100000, guid: 22f04eeebc06a6741bee24e23703abb3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17356,15 +17360,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1359918708}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.49, y: 5.3, z: -0.045}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalRotation: {x: 0.0008934821, y: 0.052919906, z: -0.0000859735, w: 0.9985984}
+  m_LocalPosition: {x: -3.216067, y: 5.310583, z: -2.47499}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1103274890}
   - {fileID: 2046316682}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.103, y: 6.067, z: -0.004}
 --- !u!1 &1363925455
 GameObject:
   m_ObjectHideFlags: 0
@@ -17871,14 +17875,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1934850278}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.03, y: 9.06, z: -14.87}
-  m_LocalScale: {x: -0.4, y: 14.32, z: -13.76}
+  m_LocalRotation: {x: 0.24190958, y: 0.061395213, z: -0.009192259, w: 0.9683109}
+  m_LocalPosition: {x: -1.61, y: 12.38, z: -13.27}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1049822838}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 28.009, y: 7.449, z: 0.772}
 --- !u!114 &1934850282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18382,7 +18386,7 @@ Transform:
   m_GameObject: {fileID: 2072937227}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.042, y: 7.5, z: -0.048}
+  m_LocalPosition: {x: -9.35, y: 9.04, z: -1.89}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18403,7 +18407,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2072937227}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -18836,15 +18840,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7695732425126680516}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.567, y: 5.3, z: -0.045}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalRotation: {x: 0.0008934821, y: 0.052919906, z: -0.0000859735, w: 0.9985984}
+  m_LocalPosition: {x: 8.484196, y: 5.30963, z: -3.7149267}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8396457346016899192}
   - {fileID: 914159423606229696}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.103, y: 6.067, z: -0.004}
 --- !u!1 &7695732425126680516
 GameObject:
   m_ObjectHideFlags: 0
@@ -18858,7 +18862,7 @@ GameObject:
   - component: {fileID: 8200007833522943505}
   - component: {fileID: 2222678828209495782}
   m_Layer: 0
-  m_Name: CauldronLobby
+  m_Name: CauldronLobby_Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18887,7 +18891,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 92bb61d0c2222784fbb8beb515cdda93, type: 2}
+  - {fileID: 2100000, guid: cb07e7239a004bb44b33a635eb4b9ed5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19062,8 +19066,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0, g: 0.9335346, b: 0.9924528, a: 1}
-      maxColor: {r: 0.13396227, g: 0.8723403, b: 1, a: 1}
+      minColor: {r: 0.6263841, g: 0.99215686, b: 0, a: 1}
+      maxColor: {r: 0.13333333, g: 1, b: 0.30461633, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}

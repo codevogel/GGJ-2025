@@ -1,6 +1,8 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WinManager : MonoBehaviour
 {
@@ -29,8 +31,21 @@ public class WinManager : MonoBehaviour
 
    void Start()
    {
-      SetWinningPlayer(1);
-      SetAmountOfPlayers(4);
+      SetWinningPlayer(WinData.GetWinningPlayer());
+      SetAmountOfPlayers(WinData.playerCount);
+
+      StartCoroutine(LoadMainMenuAfterDelay());
+   }
+
+   private IEnumerator LoadMainMenuAfterDelay()
+   {
+      yield return new WaitForSeconds(18);
+      LoadMainMenu();
+   }
+
+   public void LoadMainMenu()
+   {
+      SceneManager.LoadScene("Main Menu");
    }
 
    public void SetAmountOfPlayers(int amount)
