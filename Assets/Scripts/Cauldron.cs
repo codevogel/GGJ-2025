@@ -135,7 +135,7 @@ public class Cauldron : MonoBehaviour
                collider.GetComponentInParent<Player>().Pop();
          }
       }
-      //Destroy(this.gameObject);
+      Destroy(this.gameObject);
    }
 
    public void InstantiateExplosion()
