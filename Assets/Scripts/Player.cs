@@ -6,7 +6,9 @@ public class Player : MonoBehaviour
    [SerializeField]
    private Inflator inflator;
    [SerializeField]
-   private GameObject GFX;
+   private GameObject GFXWizard;
+   [SerializeField]
+   private GameObject GFXBubble;
 
    private Rigidbody rb;
    private PlayerController playerController;
@@ -78,9 +80,11 @@ public class Player : MonoBehaviour
       float numBlinks = timeToBlink / 0.25f;
       for (int i = 0; i < numBlinks; i++)
       {
-         GFX.SetActive(!GFX.activeSelf);
+         GFXBubble.SetActive(!GFXBubble.activeSelf);
+         GFXWizard.SetActive(!GFXWizard.activeSelf);
          yield return new WaitForSeconds(0.25f);
       }
-      GFX.SetActive(true);
+      GFXBubble.SetActive(true);
+      GFXWizard.SetActive(true);
    }
 }
