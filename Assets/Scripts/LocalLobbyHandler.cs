@@ -30,6 +30,11 @@ public class LocalLobbyHandler : MonoBehaviour
    [SerializeField] private float timeToStart = 5f;
    private List<LobbyReadyToggler> readyTogglerList = new List<LobbyReadyToggler>();
 
+   private void Start()
+   {
+      instance = this;
+   }
+
    private void SetWizardColor(GameObject player, int playerSlotIndex)
    {
       player.GetComponent<PlayerColorer>().ColorWizard(wizardMats[playerSlotIndex]);
@@ -100,8 +105,7 @@ public class LocalLobbyHandler : MonoBehaviour
 
    public void ToggleReadyUp(GameObject playerObject)
    {
-      bool isReady = !playerReadyTextDictionary[playerObject].activeInHierarchy;
-      playerReadyTextDictionary[playerObject].SetActive(isReady);
+      playerReadyTextDictionary[playerObject].SetActive(!playerReadyTextDictionary[playerObject].activeInHierarchy);
       CheckReady();
    }
 

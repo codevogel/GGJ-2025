@@ -1,12 +1,14 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 
 public class MainMenu : MonoBehaviour
 {
-   [SerializeField] private AudioClip startSFX;
+   [SerializeField] private AudioClip startSFX, navigateSFX;
     public void StartGame()
    {
       PlaySfx.instance?.playOneShotSFX(startSFX, transform, 1f, 1f, 1f, 1f, 0f);
