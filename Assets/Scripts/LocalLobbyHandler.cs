@@ -94,10 +94,10 @@ public class LocalLobbyHandler : MonoBehaviour
 
         for (int i = 0; i < playerCount; i++)
         {
-            if (!readyTexts[i].activeInHierarchy)
+            if (!readyTexts[i].GetComponent<TMP_Text>().text.Equals("Ready"))
             {
                SetStartTimer("Ready Up To Start");
-            everyoneReady = false;
+               everyoneReady = false;
                 return;
             }
         }
