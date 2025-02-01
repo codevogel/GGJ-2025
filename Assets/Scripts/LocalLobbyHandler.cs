@@ -1,4 +1,6 @@
+using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -13,14 +15,18 @@ public class LocalLobbyHandler : MonoBehaviour
     [SerializeField] private GameObject[] readyTexts = new GameObject[4];
    private Dictionary<GameObject, GameObject> playerReadyTextDictionary = new Dictionary<GameObject, GameObject>();
 
-    [SerializeField] private GameObject startButton;
-    [SerializeField] private GameObject startButton3D;
+   [SerializeField] private TMP_Text startTimer;
 
    [Space]
    [SerializeField] private Material[] wizardMats;
    [SerializeField] private Material baseWizardMat;
 
     public static LocalLobbyHandler instance;
+   private bool everyoneReady;
+   private Coroutine readyRoutine;
+
+   [Space]
+   [SerializeField] private float timeToStart = 5f;
 
     private void Start()
     {
@@ -72,7 +78,7 @@ public class LocalLobbyHandler : MonoBehaviour
         playerCount--;
     }
 
-    public void SetStartButton()
+    public void CheckReady()
     {
         if (playerCount <= 1)
         {
@@ -84,20 +90,24 @@ public class LocalLobbyHandler : MonoBehaviour
         {
             if (!readyTexts[i].activeInHierarchy)
             {
-                startButton.SetActive(false);
-                //startButton3D.SetActive(false);
+               SetStartTimer("Ready Up To Start");
                 return;
             }
         }
-
-        startButton.SetActive(true);
-        startButton3D.SetActive(true);
+      everyoneReady = true;
+      if (readyRoutine == null)
+         readyRoutine = StartCoroutine(RunStartTimer());
     }
+
+   private void SetStartTimer(string text)
+   {
+      startTimer.text = text;
+   }
 
    public void ToggleReadyUp(GameObject playerObject)
    {
       playerReadyTextDictionary[playerObject].SetActive(!playerReadyTextDictionary[playerObject].activeInHierarchy);
-      SetStartButton();
+      CheckReady();
    }
 
    public void StartGame()
@@ -109,5 +119,23 @@ public class LocalLobbyHandler : MonoBehaviour
    {
       Destroy(GameManager.instance.gameObject);
       SceneManager.LoadScene("Main Menu");
+   }
+
+   private IEnumerator RunStartTimer()
+   {
+      float timer = 0f;
+      while (timer < timeToStart)
+      {
+         timer += Time.deltaTime;
+         if (!everyoneReady)
+         {
+            StopCoroutine(readyRoutine);
+            SetStartTimer("Ready Up To Start");
+         }
+         SetStartTimer($"Starting in: {Mathf.Round(timeToStart - timer)}");
+         yield return null;
+      }
+
+      StartGame();
    }
 }
