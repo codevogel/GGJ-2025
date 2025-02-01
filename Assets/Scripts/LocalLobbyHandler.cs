@@ -20,6 +20,7 @@ public class LocalLobbyHandler : MonoBehaviour
    [Space]
    [SerializeField] private Material[] wizardMats;
    [SerializeField] private Material baseWizardMat;
+   [SerializeField] AudioClip playerJoinAudioClip;
 
     public static LocalLobbyHandler instance;
    private bool everyoneReady;
@@ -27,16 +28,7 @@ public class LocalLobbyHandler : MonoBehaviour
 
    [Space]
    [SerializeField] private float timeToStart = 5f;
-
-    private void Start()
-    {
-        instance = this;
-
-        foreach (var item in playerSlots)
-        {
-            item.SetActive(false);
-        }
-    }
+   private List<LobbyReadyToggler> readyTogglerList = new List<LobbyReadyToggler>();
 
    private void SetWizardColor(GameObject player, int playerSlotIndex)
    {
@@ -61,7 +53,9 @@ public class LocalLobbyHandler : MonoBehaviour
             playerInput.name = $"Player {i + 1}";
             playerInput.gameObject.transform.position = playerSlots[i].transform.position;
             playerInput.gameObject.transform.rotation = Quaternion.identity;
+            readyTogglerList.Add(playerInput.gameObject.GetComponent<LobbyReadyToggler>());
 
+            PlaySfx.instance.playOneShotSFX(playerJoinAudioClip, playerSlots[i].transform);
             playerReadyTextDictionary.Add(playerInput.gameObject, readyTexts[i]);
 
             //playerInput.GetComponent<LocalLobbyTag>().ReadyText = readyTexts[i];
@@ -106,12 +100,17 @@ public class LocalLobbyHandler : MonoBehaviour
 
    public void ToggleReadyUp(GameObject playerObject)
    {
-      playerReadyTextDictionary[playerObject].SetActive(!playerReadyTextDictionary[playerObject].activeInHierarchy);
+      bool isReady = !playerReadyTextDictionary[playerObject].activeInHierarchy;
+      playerReadyTextDictionary[playerObject].SetActive(isReady);
       CheckReady();
    }
 
    public void StartGame()
    {
+      foreach (LobbyReadyToggler toggler in readyTogglerList)
+      {
+         Destroy(toggler);
+      }
       ScreenFaderManager.instance?.GoToSceneAsync(2);
    }
 
