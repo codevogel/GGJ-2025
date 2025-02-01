@@ -252,3 +252,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyAfter: 7
+  particleEffect: {fileID: 2433282508537954060, guid: 5fcf5229d1740ee44a65d8f3d28befbb, type: 3}
