@@ -1726,7 +1726,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeInOnStart: 0
-  fadeDuration: 2
+  fadeDuration: 0.7
   fadeMaterial: {fileID: 2100000, guid: 9d3b813ec8e0918429d3fef822f508f4, type: 2}
 --- !u!114 &1622316941
 MonoBehaviour:
