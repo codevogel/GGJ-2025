@@ -683,6 +683,12 @@ MonoBehaviour:
   ExplodeEvent:
     m_PersistentCalls:
       m_Calls: []
+  doesDamage: 0
+  explosionRadius: 2.5
+  explosionForce: 15
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!54 &8644653345524168483
 Rigidbody:
   m_ObjectHideFlags: 0

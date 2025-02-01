@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -30,10 +31,17 @@ public class Cauldron : MonoBehaviour
 
    public UnityEvent ExplodeEvent;
 
+   [Space]
+   [SerializeField] private bool doesDamage;
+   [SerializeField] private float explosionRadius, explosionForce;
+   [SerializeField] private LayerMask playerLayer;
+   private Rigidbody rBody;
+
    private void Start()
    {
-      ExplodeEvent.AddListener(SpawnBubbles);
+      rBody = GetComponent<Rigidbody>();
       ExplodeEvent.AddListener(ExplodeCauldron);
+      ExplodeEvent.AddListener(SpawnBubbles);
       ExplodeEvent.AddListener(InstantiateExplosion);
 
       StartCoroutine(ExplodeTimer());
@@ -68,6 +76,17 @@ public class Cauldron : MonoBehaviour
 
    private void ExplodeCauldron()
    {
+      Collider[] playerCollis = Physics.OverlapSphere(transform.position, explosionRadius, playerLayer);
+      if (playerCollis.Length > 0)
+      {
+         foreach (Collider collider in playerCollis)
+         {
+            collider.attachedRigidbody.AddExplosionForce(explosionForce, transform.position, explosionRadius, 0, ForceMode.Impulse);
+
+            if (doesDamage)
+               collider.GetComponentInParent<Player>().Pop();
+         }
+      }
       Destroy(this.gameObject);
    }
 
