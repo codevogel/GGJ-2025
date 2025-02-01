@@ -648,7 +648,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 358, y: 69.1}
+  m_AnchoredPosition: {x: 358, y: 20}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &782119836
@@ -1905,7 +1905,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -546, y: 215}
+  m_AnchoredPosition: {x: -546, y: 268.9}
   m_SizeDelta: {x: 500, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1923147101
@@ -1930,8 +1930,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Cauldron Clash
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c42bd57e18944b5408fdd9f6a048a322, type: 2}
-  m_sharedMaterial: {fileID: -7275054445746765465, guid: c42bd57e18944b5408fdd9f6a048a322, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9a907af900fece1e5a4bf75bf2fcfb8b, type: 2}
+  m_sharedMaterial: {fileID: 165062786953797294, guid: 9a907af900fece1e5a4bf75bf2fcfb8b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1955,8 +1955,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 97.02
+  m_fontSizeBase: 97.02
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
