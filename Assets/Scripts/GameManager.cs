@@ -86,7 +86,6 @@ public class GameManager : MonoBehaviour
    {
       currentRoutine = null;
       ScreenFaderManager.instance?.GoToSceneAsync(3);
-      GameObject.FindAnyObjectByType<VictoryScreen>().SetWinnerText(winner.name);
       winnerName = winner.name;
    }
 

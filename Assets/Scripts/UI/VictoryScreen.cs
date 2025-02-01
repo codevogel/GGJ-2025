@@ -31,7 +31,7 @@ public class VictoryScreen : MonoBehaviour
 
    public void Replay()
    {
-      ScreenFaderManager.instance?.GoToSceneAsync(0);
+      ScreenFaderManager.instance?.GoToSceneAsync(1);
    }
 
    public void GoToMainMenu()
