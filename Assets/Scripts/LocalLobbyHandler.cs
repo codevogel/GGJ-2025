@@ -15,6 +15,7 @@ public class LocalLobbyHandler : MonoBehaviour
     [SerializeField] private GameObject[] readyTexts = new GameObject[4];
    private Dictionary<GameObject, GameObject> playerReadyTextDictionary = new Dictionary<GameObject, GameObject>();
 
+   [SerializeField] private GameObject startContainer;
    [SerializeField] private TMP_Text startTimer;
 
    [Space]
@@ -64,8 +65,10 @@ public class LocalLobbyHandler : MonoBehaviour
             playerInput.gameObject.transform.rotation = Quaternion.identity;
             readyTogglerList.Add(playerInput.gameObject.GetComponent<LobbyReadyToggler>());
 
-            PlaySfx.instance.playOneShotSFX(playerJoinAudioClip, playerSlots[i].transform, 1f, 1f, 1f, 1f, 0f);
+            PlaySfx.instance?.playOneShotSFX(playerJoinAudioClip, playerSlots[i].transform, 1f, 1f, 1f, 1f, 0f);
             playerReadyTextDictionary.Add(playerInput.gameObject, readyTexts[i]);
+
+            readyTexts[i].GetComponent<TMP_Text>().text = "Not Ready";
 
             //playerInput.GetComponent<LocalLobbyTag>().ReadyText = readyTexts[i];
             playerCount++;
@@ -110,7 +113,12 @@ public class LocalLobbyHandler : MonoBehaviour
 
    public void ToggleReadyUp(GameObject playerObject)
    {
-      playerReadyTextDictionary[playerObject].SetActive(!playerReadyTextDictionary[playerObject].activeInHierarchy);
+      if (playerReadyTextDictionary.TryGetValue(playerObject, out GameObject readyObject))
+      {
+         var readyText = readyObject.GetComponent<TMP_Text>();
+         bool isReady = readyText.text == "Not Ready";
+         readyText.text = isReady ? "Ready" : "Not Ready";
+      }
       CheckReady();
       PlaySfx.instance?.playOneShotSFX(playerReadyAudioClip, playerObject.transform, 1f, 1f, 1f, 1f, 0f);
    }
@@ -132,6 +140,7 @@ public class LocalLobbyHandler : MonoBehaviour
 
    private IEnumerator RunStartTimer()
    {
+      startContainer.SetActive(true);
       float timer = 0f;
       while (timer < timeToStart)
       {
@@ -145,7 +154,7 @@ public class LocalLobbyHandler : MonoBehaviour
          SetStartTimer($"Starting in: {Mathf.Round(timeToStart - timer)}");
          yield return null;
       }
-
+      Debug.Log("Starting game");
       StartGame();
    }
 }
