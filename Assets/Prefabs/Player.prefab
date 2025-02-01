@@ -411,6 +411,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 569f430376d524f47a2e7383e72dba03, type: 3}
   - {fileID: 8300000, guid: 2a44847477156704abc2875dc4f0f735, type: 3}
   - {fileID: 8300000, guid: d035e261416981648a7ff2dba2e4c81b, type: 3}
+  Pickup:
+  - {fileID: 8300000, guid: 519c944b01c055c4a9a34ffe078a7b70, type: 3}
+  - {fileID: 8300000, guid: 3df69bd1edd9a6c48b4c2c81869d1f74, type: 3}
+  - {fileID: 8300000, guid: e8dc04a7184fca3498cc38a82fed5e31, type: 3}
+  - {fileID: 8300000, guid: d98271ba88b8c5b45abd3abd855ec849, type: 3}
+  - {fileID: 8300000, guid: 55bef5fff46b5134992a2a11b334930b, type: 3}
 --- !u!1 &8530130187469773462
 GameObject:
   m_ObjectHideFlags: 0

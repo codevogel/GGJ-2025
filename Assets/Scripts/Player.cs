@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
    [SerializeField]
    private float _bounceForce = 15;
 
+   private PlayerSounds playerSounds;
+
    // Bounce force is lower when you have more PickupCount (At at least 10 pickups, bounce force is 25% of the original value)
    public float BounceForce
    {
@@ -27,6 +29,7 @@ public class Player : MonoBehaviour
    {
       rb = GetComponent<Rigidbody>();
       playerController = GetComponent<PlayerController>();
+      playerSounds = GetComponent<PlayerSounds>();
    }
 
    public void OnCollisionEnter(Collision collision)
@@ -46,6 +49,7 @@ public class Player : MonoBehaviour
       {
          case IPickupable.PickupType.Bubble:
             inflator.IncrementBubbleCount();
+            playerSounds.onPickp();
             break;
          default:
             throw new System.NotImplementedException();
