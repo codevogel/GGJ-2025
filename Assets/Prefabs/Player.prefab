@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 3751482281497398912}
   - component: {fileID: 2200695729292287219}
   - component: {fileID: 6428112980762393682}
+  - component: {fileID: 8384767459990833422}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -188,6 +189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inflator: {fileID: 2633324300206216464}
   GFX: {fileID: 8530130187469773462}
+  _bounceForce: 3
 --- !u!114 &2633324300206216464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,6 +209,7 @@ MonoBehaviour:
   popForce: 250
   popForceVerticalMin: 5
   popForceVerticalMax: 15
+  playerSounds: {fileID: 8384767459990833422}
 --- !u!114 &5726049249601082918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,6 +393,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0014e0d8518b9cd4fbf34cc8507a0403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8384767459990833422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6937183731054954762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b8efd510cbaa949b3be77fd35fb6be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  B2bCollisions:
+  - {fileID: 8300000, guid: 81d2892cea660a14ab7c9efb9ab5593c, type: 3}
+  Burst:
+  - {fileID: 8300000, guid: 569f430376d524f47a2e7383e72dba03, type: 3}
+  - {fileID: 8300000, guid: 2a44847477156704abc2875dc4f0f735, type: 3}
+  - {fileID: 8300000, guid: d035e261416981648a7ff2dba2e4c81b, type: 3}
 --- !u!1 &8530130187469773462
 GameObject:
   m_ObjectHideFlags: 0
