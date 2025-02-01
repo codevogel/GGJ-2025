@@ -650,8 +650,12 @@ PrefabInstance:
       value: CauldronStatic (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6734881217027322231, guid: 2b3e1d8703e7b6247b49485ea119d87b, type: 3}
+      propertyPath: TestRun
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6734881217027322231, guid: 2b3e1d8703e7b6247b49485ea119d87b, type: 3}
       propertyPath: maxExplodeTime
-      value: 22
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6734881217027322231, guid: 2b3e1d8703e7b6247b49485ea119d87b, type: 3}
       propertyPath: minExplodeTime
@@ -1180,8 +1184,12 @@ PrefabInstance:
       value: CauldronStatic
       objectReference: {fileID: 0}
     - target: {fileID: 6734881217027322231, guid: 2b3e1d8703e7b6247b49485ea119d87b, type: 3}
+      propertyPath: TestRun
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6734881217027322231, guid: 2b3e1d8703e7b6247b49485ea119d87b, type: 3}
       propertyPath: maxExplodeTime
-      value: 22
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6734881217027322231, guid: 2b3e1d8703e7b6247b49485ea119d87b, type: 3}
       propertyPath: minExplodeTime
@@ -2205,8 +2213,12 @@ PrefabInstance:
       value: CauldronStatic (2)
       objectReference: {fileID: 0}
     - target: {fileID: 6734881217027322231, guid: 2b3e1d8703e7b6247b49485ea119d87b, type: 3}
+      propertyPath: TestRun
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6734881217027322231, guid: 2b3e1d8703e7b6247b49485ea119d87b, type: 3}
       propertyPath: maxExplodeTime
-      value: 22
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6734881217027322231, guid: 2b3e1d8703e7b6247b49485ea119d87b, type: 3}
       propertyPath: minExplodeTime
