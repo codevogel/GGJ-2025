@@ -15,6 +15,11 @@ public class ButtonSelectedAudioTrigger : MonoBehaviour
    [SerializeField] private AudioClip selectAudioClip;
    [SerializeField] private TMP_Text text;
 
+   private void Awake()
+   {
+      
+   }
+
    private void Start()
    {
       eventSystem = FindAnyObjectByType<EventSystem>();
@@ -27,7 +32,7 @@ public class ButtonSelectedAudioTrigger : MonoBehaviour
 
    private void Update()
    {
-      if (eventSystem.currentSelectedGameObject != selectedObject)
+      if (eventSystem.currentSelectedGameObject != selectedObject && eventSystem.currentSelectedGameObject == gameObject)
       {
          PlaySfx.instance.playOneShotSFX(selectAudioClip, transform, 2, 2, 1, 1, 0);
 

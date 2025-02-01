@@ -29,7 +29,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Albedo2:
-        m_Texture: {fileID: 2800000, guid: 9142a8f14e5604d4c903747acabecc57, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6ea297e60757b2348a0ee67571afc9d3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Albedo3:
@@ -45,7 +45,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MSHAO2:
-        m_Texture: {fileID: 2800000, guid: d74573b950f602c43a6401f30971112a, type: 3}
+        m_Texture: {fileID: 2800000, guid: c50758b3a743fee4a81e865ca3938e20, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MSHAO3:
@@ -61,7 +61,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap2:
-        m_Texture: {fileID: 2800000, guid: f7ea4ecfc79abde4ebcb1c5ad696e882, type: 3}
+        m_Texture: {fileID: 2800000, guid: e6cbf2df31271024fb59db37e07cf3e3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap3:
@@ -110,8 +110,8 @@ Material:
     - _Offset2: {r: 0, g: 0, b: 0, a: 0}
     - _Offset3: {r: 0, g: 0, b: 0, a: 0}
     - _Offset4: {r: 0, g: 0, b: 0, a: 0}
-    - _Tiling1: {r: 5, g: 5, b: 0, a: 0}
-    - _Tiling2: {r: 2, g: 2, b: 0, a: 0}
+    - _Tiling1: {r: 2, g: 2, b: 0, a: 0}
+    - _Tiling2: {r: 1.5, g: 1.5, b: 0, a: 0}
     - _Tiling3: {r: 1, g: 1, b: 1, a: 1}
     - _Tiling4: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

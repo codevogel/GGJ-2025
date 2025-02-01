@@ -15,6 +15,9 @@ public class Player : MonoBehaviour
 
    private PlayerSounds playerSounds;
 
+   private bool _canPickUp = true;
+   public bool CanPickUp => _canPickUp;
+
    // Bounce force is lower when you have more PickupCount (At at least 10 pickups, bounce force is 25% of the original value)
    public float BounceForce
    {
@@ -59,20 +62,19 @@ public class Player : MonoBehaviour
    public void Pop()
    {
       inflator.Pop();
-      Stun();
+      TempDisable();
    }
 
-   public void Stun()
+   public void TempDisable()
    {
-      playerController.enabled = false;
+
       rb.linearVelocity = Vector3.zero;
-      rb.isKinematic = true;
       StartCoroutine(Blink(3));
-      StartCoroutine(Unstun(3));
    }
 
    public IEnumerator Blink(float timeToBlink)
    {
+
       float numBlinks = timeToBlink / 0.25f;
       for (int i = 0; i < numBlinks; i++)
       {
@@ -80,12 +82,5 @@ public class Player : MonoBehaviour
          yield return new WaitForSeconds(0.25f);
       }
       GFX.SetActive(true);
-   }
-
-   public IEnumerator Unstun(float time)
-   {
-      yield return new WaitForSeconds(time);
-      playerController.enabled = true;
-      rb.isKinematic = false;
    }
 }
