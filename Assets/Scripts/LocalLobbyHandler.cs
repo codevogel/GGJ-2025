@@ -85,7 +85,7 @@ public class LocalLobbyHandler : MonoBehaviour
             if (!readyTexts[i].activeInHierarchy)
             {
                 startButton.SetActive(false);
-                startButton3D.SetActive(false);
+                //startButton3D.SetActive(false);
                 return;
             }
         }

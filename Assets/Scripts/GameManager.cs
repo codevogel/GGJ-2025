@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
 
    private Coroutine currentRoutine;
    private GameUI gameUI;
+   public string winnerName;
 
    private void Start()
    {
@@ -85,12 +86,12 @@ public class GameManager : MonoBehaviour
    {
       currentRoutine = null;
       SceneManager.LoadScene("Victory Screen");
-      GameObject.FindAnyObjectByType<VictoryScreen>().SetWinnerText(winner.name);
+      winnerName = winner.name;
    }
 
    private void InitializePlayers()
    {
-      for (int i = 0; i < players.Count(); i++)
+      for (int i = 0; i < players.Length; i++)
       {
          if (players[i] == null)
             return;
@@ -109,10 +110,16 @@ public class GameManager : MonoBehaviour
    private GameObject DetermineWinner()
    {
       GameObject winner = players[0];
+      int winnerCount = players[0].GetComponent<Inflator>().PickupCount;
+      Debug.Log($"winnercount is {winnerCount}");
       for (int i = 1; i < players.Length; i++)
       {
-         if (players[i] != null && players[i].transform.localScale.magnitude > winner.transform.localScale.magnitude)
+         if (players[i] == null) return winner;
+         int newCount = players[i].GetComponent<Inflator>().PickupCount;
+         Debug.Log($"newcount = {newCount}, winnercount = {winnerCount}");
+         if (newCount > winnerCount)
          {
+            winnerCount = newCount;
             winner = players[i];
          }
       }

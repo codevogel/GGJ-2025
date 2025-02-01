@@ -110,7 +110,7 @@ public class PlayerController : MonoBehaviour
       Vector3 moveForceVector = new Vector3(movementInput.x, 0, movementInput.y) * moveForce;
 
       var dot = Vector3.Dot(rigidBody.linearVelocity.normalized, moveForceVector.normalized);
-      Debug.Log(dot);
+      //Debug.Log(dot);
       if (dot < 0.5f)
       {
          moveForceVector *= movementSpeedBoostWhenMovingOpposite; // Boost factor (adjust as needed)

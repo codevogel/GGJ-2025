@@ -20,10 +20,12 @@ public class VictoryScreen : MonoBehaviour
    {
       if (timerRoutine == null)
          timerRoutine = StartCoroutine(RunCountdown());
+      SetWinnerText(GameManager.instance.winnerName);
    }
 
    public void SetWinnerText(string winner)
    {
+      Debug.Log("naming winner");
       victoryText.text = $"{winner} wins!";
    }
 
