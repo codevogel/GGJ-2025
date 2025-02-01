@@ -22,7 +22,6 @@ public class PickupSpawner : MonoBehaviour
       go.transform.position += offset;
       //Debug.Log(go.transform.position);
       var pickup = go.GetComponent<Pickup>();
-      pickup.DelayPickupable();
       return pickup;
    }
 
