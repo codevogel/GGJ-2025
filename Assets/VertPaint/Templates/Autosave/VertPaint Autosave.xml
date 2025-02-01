@@ -1,25 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<vertPaintTemplate version="1.1.0">
-  <enabled>false</enabled>
-  <togglePreview>false</togglePreview>
+<vertPaintTemplate version="1.1.1">
+  <enabled>true</enabled>
+  <togglePreview>true</togglePreview>
   <hideTransformHandle>true</hideTransformHandle>
   <brushSettings>
-    <radius>1.5</radius>
+    <radius>1,48</radius>
     <maxRadius>10</maxRadius>
-    <delay>0.025</delay>
-    <opacity>0.25</opacity>
+    <delay>0,001</delay>
+    <opacity>0,308</opacity>
     <falloff>
       <key>
         <time>0</time>
         <value>1</value>
         <inTangent>0</inTangent>
-        <outTangent>-1</outTangent>
+        <outTangent>0</outTangent>
       </key>
       <key>
-        <time>1</time>
-        <value>0</value>
+        <time>0,9766541</time>
+        <value>0,09802246</value>
         <inTangent>-1</inTangent>
-        <outTangent>0</outTangent>
+        <outTangent>-1</outTangent>
       </key>
     </falloff>
     <color>
@@ -29,7 +29,7 @@
       <a>1</a>
     </color>
     <style>2</style>
-    <alpha>0.2</alpha>
+    <alpha>1</alpha>
     <blink>true</blink>
   </brushSettings>
   <keyBindings>
