@@ -674,7 +674,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Rik Langeveld
+  m_text: "Fa\xEFz Hamdi"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 032b76ec47e0f154984f2f310a7a49e0, type: 2}
   m_sharedMaterial: {fileID: 3208175335923785834, guid: 032b76ec47e0f154984f2f310a7a49e0, type: 2}
