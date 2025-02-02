@@ -659,8 +659,8 @@ MonoBehaviour:
   _explosionSound: {fileID: 8300000, guid: 419e5d1fc7cf3b2488f8d17a6205363c, type: 3}
   testSpawn: 0
   explosion: {fileID: 1196501274694262220, guid: 2109abb3e88f9de4bb64598163214834, type: 3}
-  minBubbleVel: 3
-  maxBubbleVel: 6
+  minBubbleVel: 2
+  maxBubbleVel: 3
   ExplodeFeedForward:
     m_PersistentCalls:
       m_Calls:
@@ -694,7 +694,7 @@ MonoBehaviour:
   TestRun: 1
   doesDamage: 0
   explosionRadius: 2.5
-  explosionForce: 15
+  explosionForce: 6
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
