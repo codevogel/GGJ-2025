@@ -7,6 +7,7 @@ public class LaBomba : MonoBehaviour
    [SerializeField] private LayerMask playerLayer;
    private Rigidbody rBody;
    [SerializeField] private GameObject explosion;
+   [SerializeField] private AudioClip explosionSFX;
 
    private void OnCollisionEnter(Collision collision)
    {
@@ -26,6 +27,7 @@ public class LaBomba : MonoBehaviour
             collider.attachedRigidbody.AddExplosionForce(explosionForce, transform.position, explosionRadius, 0, ForceMode.Impulse);
          }
       }
+      PlaySfx.instance?.playOneShotSFX(explosionSFX, transform, 0.5f, 0.6f, 0.5f, 0.6f, 0f);
       GameObject.Instantiate(explosion, transform.position, Quaternion.identity);
       Destroy(this.gameObject);
    }

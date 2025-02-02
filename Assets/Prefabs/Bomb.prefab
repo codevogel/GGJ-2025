@@ -47,7 +47,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3239929843228620714}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: acc529e191e312b47b9ad8974741392a, type: 3}
   m_Name: 
@@ -60,7 +60,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3239929843228620714}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7103f8982f16b8f4297a708a7c32846c, type: 3}
   m_Name: 
@@ -68,7 +68,7 @@ MonoBehaviour:
   _shadowPrefab: {fileID: 2792537990705311569, guid: 29ff90f46a0056f45bbf37adfae91f11, type: 3}
   _groundLayer:
     serializedVersion: 2
-    m_Bits: 65
+    m_Bits: 1
   _scaleFactor: 1
   _maxScale: 1
   _minScale: 0.5
@@ -85,12 +85,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doesDamage: 1
-  explosionRadius: 40
-  explosionForce: 12
+  explosionRadius: 5
+  explosionForce: 8
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
   explosion: {fileID: 2433282508537954060, guid: 3ef3ae421f71c5c4e97fe12dc2fc6312, type: 3}
+  explosionSFX: {fileID: 8300000, guid: 929e850077bcdad459e75d2d5733dec5, type: 3}
 --- !u!54 &1497728444637574160
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -321,9 +322,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -1461304994638716399, guid: a1db0bdbf52d1754aa2f858c14c90604, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1461304994638716399, guid: a1db0bdbf52d1754aa2f858c14c90604, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: e6a79ab96af5e644c9328a332737b79e, type: 2}
+    - target: {fileID: -804731622281664130, guid: a1db0bdbf52d1754aa2f858c14c90604, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -804731622281664130, guid: a1db0bdbf52d1754aa2f858c14c90604, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -331,6 +340,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a1db0bdbf52d1754aa2f858c14c90604, type: 3}
       propertyPath: m_Name
       value: bomb
+      objectReference: {fileID: 0}
+    - target: {fileID: 3616844112969948802, guid: a1db0bdbf52d1754aa2f858c14c90604, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3616844112969948802, guid: a1db0bdbf52d1754aa2f858c14c90604, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
